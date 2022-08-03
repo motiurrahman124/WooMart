@@ -10,4 +10,8 @@ class HomeController extends Controller
     {
         return view('Frontend.home.index');
     }
+    public function signup()
+    {
+        return view('Frontend.home.signup');
+    }
 }

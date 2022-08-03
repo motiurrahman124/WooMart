@@ -16,4 +16,5 @@ use App\Http\Controllers\DashboardController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/signup', [HomeController::class, 'signup']);
 Route::get('/dashboard', [DashboardController::class, 'dashboard']);

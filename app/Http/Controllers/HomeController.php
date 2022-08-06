@@ -10,4 +10,12 @@ class HomeController extends Controller
     {
         return view('Frontend.home.index');
     }
+    public function blog()
+    {
+        return view('Frontend.home.blog');
+    }
+    public function single_blog()
+    {
+        return view('Frontend.home.blog.single-blog');
+    }
 }

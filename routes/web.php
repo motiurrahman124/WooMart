@@ -15,3 +15,8 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::group(['prefix' => 'blog'], function(){
+    Route::get('/', [HomeController::class, 'blog'])->name('blog');
+    Route::get('/single-blog', [HomeController::class, 'single_blog'])->name('single_blog');
+});

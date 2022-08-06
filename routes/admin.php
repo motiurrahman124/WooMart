@@ -23,6 +23,8 @@ Route::group(['prefix' => 'admin'], function() {
     Route::group(['middleware' => 'admin.auth'], function () {
 
         Route::get('',[DashboardController::class,'index'])->name('admin.dashboard');
+        Route::get('/create-blog',[DashboardController::class,'createBlog'])->name('createBlog');
+        Route::post('/create--new-blog',[DashboardController::class,'createNewBlog'])->name('createNewBlog');
 
     });
 

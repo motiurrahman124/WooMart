@@ -60,7 +60,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 col-md-6 col-6 order-0 order-lg-1">
                     <div class="brand-area">
-                        <a href="index.html"><img src="{{asset('assets/Mainpage/images/logo1.png')}}" alt="Woomart" /></a>
+                        <a href="{{ url('/') }}"><img src="{{asset('assets/Mainpage/images/logo1.png')}}" alt="Woomart" /></a>
                     </div>
                 </div>
                 <div class="col-lg-6  order-2 order-lg-2">
@@ -111,6 +111,8 @@
     </div>
     <!-- header-middle-aera star here   -->
     <!-- header bottom area  start here  -->
+
+    @if(isset($menu) && $menu == 'home')
     <div class="header-botom-area">
         <div class="container">
             <div class="row">
@@ -322,5 +324,131 @@
             </div>
         </div>
     </div>
+
+    @else
+
+    <div class="header-botom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="categories-list">
+                        <ul class="catagory">
+                            <li>
+                                <a href="#">All Categories <i class="fa fa-angle-down"></i></a>
+                                <ul class="catagory-items">
+                                    <li><a href="#">Baby Cloth</a></li>
+                                    <li><a href="#">Man Clothing</a></li>
+                                    <li><a href="#">Girls Clothing</a></li>
+                                    <li><a href="#">Electronics</a></li>
+                                    <li><a href="#">Man Watches</a></li>
+                                    <li><a href="#">Jewellery</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <a id="menu-bars" class="text-right d-block d-md-none" href="#"><i class="fa fa-bars"></i></a>
+                </div>
+                <div class="col-lg-9 col-md-9 text-left text-md-right">
+                    <nav class="main-menu-area">
+                        <ul>
+                            <li>
+                                <a href="#">Home <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu-items">
+                                    <li><a href="index.html">home v1</a></li>
+                                    <li><a href="index2.html">home v2</a></li>
+                                    <li><a href="index3.html">home v3</a></li>
+                                    <li><a href="index4.html">home v4</a></li>
+                                    <li><a href="index5.html">home v5</a></li>
+                                </ul>
+                            </li>
+                            <li class="mega-menu-itms position-static">
+                                <a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
+                                <ul class="mega-menu row">
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Men Fashion</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>                                                                                            
+                                    </li>
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Women Fashion</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>                                                                                            
+                                    </li>
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Electronics</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>                                                                                            
+                                    </li>
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Mobile & Laptops</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>                                                                                            
+                                    </li>
+                                    <li class="col-12 brad-logo-area">
+                                        <div><a href="#"><img src="images/brands/clients_logo1.png" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="images/brands/clients_logo2.png" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="images/brands/clients_logo3.png" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="images/brands/clients_logo4.png" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="images/brands/clients_logo5.png" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="images/brands/clients_logo6.png" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="images/brands/clients_logo7.png" alt="clients_logo" /></a></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                                <ul class="submenu-items">
+                                    <li><a href="about.html">about</a></li>
+                                    <li><a href="shop.html">shop</a></li>
+                                    <li><a href="single-shop.html">shop details</a></li>
+                                    <li><a href="blog.html">blog</a></li>
+                                    <li><a href="single-blog.html">blog details</a></li>
+                                    <li><a href="contact.html">contact</a></li>
+                                    <li><a href="cart.html">cart</a></li>
+                                    <li><a href="checkout.html">checkout</a></li>
+                                    <li><a href="faq.html">FAQ</a></li>
+                                    <li><a href="order-track.html">order track</a></li>
+                                    <li><a href="sign-in.html">sign in</a></li>
+                                    <li><a href="sign-up.html">sign up</a></li>
+                                    <li><a href="reset-password.html">reset password</a></li>
+                                    <li><a href="terms-conditions.html">terms conditions</a></li>
+                                    <li><a href="wishlist.html">wishlist</a></li>
+                                    <li><a href="404.html">404 page</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="blog.html">Blog </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Contact </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @endif
     <!-- header bottom area  end here  -->
 </header>

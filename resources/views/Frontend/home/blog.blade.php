@@ -14,7 +14,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <article  class="single-post">
                                         <div class="post-thumbnail">
-                                            <a href="{{ route('single_blog') }}">
+                                            <a href="{{ route('single_blog', 1) }}">
                                                 <img src="{{asset('assets/Mainpage/images/blog/1.jpg')}}" alt="blog" />
                                             </a>
                                             <span class="blog-date">15 Sep, 20</span>
@@ -29,10 +29,10 @@
                                                 </li>
                                             </ul>
                                             <h2 class="post-title">
-                                                <a href="{{ route('single_blog') }}">Nunc quis phasellus mi sed. </a>
+                                                <a href="{{ route('single_blog', 1) }}">Nunc quis phasellus mi sed. </a>
                                             </h2>
                                             <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
-                                            <a href="{{ route('single_blog') }}" class="post-btn">
+                                            <a href="{{ route('single_blog', 1) }}" class="post-btn">
                                                 Read More <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>

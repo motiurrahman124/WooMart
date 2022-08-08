@@ -40,16 +40,9 @@
                                       </form>
                                 </div>
                                 <div class="register-bottom text-center">
-                                    <div class="bottom-title">
-                                        <h3>Or</h3>
-                                    </div>
-                                    <ul class="btn-list d-flex align-items-center justify-content-between">
-                                        <li><a class="login-btn facebook" href="#"><i class="fab fa-facebook-f"></i>Log In with Facebook</a></li>
-                                        <li><a class="login-btn google" href="#"><i class="fab fa-google"></i>Log In with Google</a></li>
-                                    </ul>
                                     <p class="have-account mb-0">
                                         Already have an account? 
-                                        <a href="sign-in.html">Sign In Now</a>
+                                        <a href="{{route('login.form')}}">Sign In Now</a>
                                     </p>
                                 </div>
                             </div>

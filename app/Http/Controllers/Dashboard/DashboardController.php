@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -18,6 +19,7 @@ class DashboardController extends Controller
     }
     public function createNewBlog(Request $request)
     {
+        $data['author_id'] = Auth::id();
         $data['title'] = $request->title;
 
         if(!file_exists(public_path('images')))

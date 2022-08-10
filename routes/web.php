@@ -26,8 +26,11 @@ Route::post('/login-check', [UserAuthController::class, 'login'])->name('loginCh
 Route::get('/signup', [UserAuthController::class, 'signup'])->name('signup.form');
 Route::post('/signup-check', [UserAuthController::class, 'signup'])->name('signup.store');
 
+Route::get('/logout', [UserAuthController::class, 'logout'])->name('logout');
+
 
 Route::group(['prefix' => 'blog'], function(){
     Route::get('/', [HomeController::class, 'blog'])->name('blog');
     Route::get('/single-blog/{id}', [BlogController::class, 'single_blog'])->name('single_blog');
+    Route::post('/blog-comment', [BlogController::class, 'comment'])->name('blog.comment.store');
 });

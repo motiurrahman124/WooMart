@@ -54,10 +54,10 @@
           </li> --}}
 
           <li class="nav-item">
-            <a href="{{ route('createBlog') }}" class="nav-link">
+            <a href="{{ route('blog.index') }}" class="nav-link {{ isset($menu) && $menu == 'blog' ? 'active' : ''}}">
               <i class="nav-icon fas fa-edit"></i>
               <p>
-                Create Blog
+                BLog
               </p>
             </a>
           </li>

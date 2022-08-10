@@ -11,28 +11,35 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue malesuada in sit sit ultrices nibh sit.</p>
                                 </div>
                                 <div class="register-form">
-                                    <form action="{{ route('signup.store') }}">
+                                    <form action="{{ route('signup.store') }}" method="POST">
+                                        @csrf
+
                                         <div class="form-group ">
-                                          <input type="text" class="form-control" name="name" id="fullname" placeholder="Full Name" />
+                                          <input type="text" class="form-control" name="name" value="{{old('name')}}" id="fullname" placeholder="Full Name" />
                                           <i class="icon fas fa-user"></i>
+                                        <span class="text-danger">{{$errors->first('name')}}</span>
                                         </div>
                                         <div class="form-group ">
-                                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" />
+                                            <input type="email" class="form-control" name="email" value="{{old('email')}}" id="email" placeholder="Email" />
                                             <i class="icon fas fa-envelope"></i>
+                                        <span class="text-danger">{{$errors->first('email')}}</span>
                                         </div>
                                         <div class="form-group ">
                                           <input type="password" class="form-control" id="password" name="password" placeholder="Password" />
                                           <i class="icon fas fa-lock"></i>
+                                        <span class="text-danger">{{$errors->first('password')}}</span>
                                         </div>
                                         <div class="form-group mb-3">
-                                            <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-enter Password" />
+                                            <input type="password" class="form-control" id="repassword" name="password_confirmation" placeholder="Re-enter Password" />
                                             <i class="icon fas fa-lock"></i>
                                         </div>
                                         <div class="form-bottom ">
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="agree">
+                                                <input type="checkbox" name="agree" class="form-check-input" id="agree">
                                                 <label class="form-check-label" for="agree">Agree with Terms & Policy</label>
                                             </div>
+                                        <span class="text-danger">{{$errors->first('agree')}}</span>
+
                                         </div>
                                         <div class="form-btn text-center">
                                             <button type="submit" class="btn-style-two">Sign Up</button>

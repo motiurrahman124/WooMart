@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use Exception;
+
 use App\Models\Blog;
-=======
-use App\Models\Blog;
+use App\Models\BlogComment;
 use Exception;
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
     public function single_blog($id)
     {
         try{
-<<<<<<< HEAD
-            $blog = Blog::where(['id'=>decrypt($id)])->first();
+            $blog = Blog::where(['id'=>decrypt($id)])->with('comments')->first();
             if(!empty($blog))
             {
                 return view('Frontend.home.blog.single-blog',['blog'=>$blog]);
@@ -28,18 +25,22 @@ class BlogController extends Controller
         {
             return redirect()->back();
         }
-        
-=======
+    }
 
-            $blog = Blog::where(['id' =>decrypt($id) ])->first();
-            if(!empty($blog)) {
-                return view('Frontend.home.blog.single-blog',['blog' => $blog]);
-            }
+    public function comment(Request $request)
+    {
+        try {
+            BlogComment::create([
+                'blog_id' => $request->blog_id,
+                'user_id' => Auth::id(),
+                'messege' => $request->messege,
+            ]);
+
             return redirect()->back();
-         } catch (Exception $e)
-        {
+
+        } catch (Exception $e) {
             return redirect()->back();
+
         }
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
     }
 }

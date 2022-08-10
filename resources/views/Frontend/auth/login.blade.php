@@ -11,9 +11,10 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue malesuada in sit sit ultrices nibh sit.</p>
                         </div>
                         <div class="register-form">
-                            <form action="#">
+                            <form action="{{route('loginCheck')}}" method="POST">
+                                @csrf
                                 <div class="form-group ">
-                                  <input type="text" class="form-control" name="username" id="username" placeholder="username" />
+                                  <input type="text" class="form-control" name="email" id="username" placeholder="Email" />
                                   <i class="icon fas fa-user"></i>
                                 </div>
                                 <div class="form-group mb-3">

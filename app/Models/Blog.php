@@ -19,4 +19,9 @@ class Blog extends Model
     {
         return asset($image);
     }
+
+    public function comments()
+    {
+        return $this->hasMany(BlogComment::class, 'blog_id');
+    }
 }

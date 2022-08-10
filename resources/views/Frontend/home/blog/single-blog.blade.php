@@ -46,6 +46,9 @@
                                 </div>
                             </div>
                         </div>
+                        @if(isset($blog->comments[0]))
+                        @foreach ($blog->comments as $comment )
+
                         <div class="single-post-commnt">
                             <ul class="comment-list">
                                 <li class="sngle-comment">
@@ -54,91 +57,51 @@
                                             <img class="author-image" src="{{asset('assets/Mainpage/images/comment1.png')}}"  alt="comment">
                                         </a>
                                         <div class="media-body ">
-                                          <h3 class="author-name"><a href="#">Torrent</a></h3>
+                                          <h3 class="author-name"><a href="#">{{ $comment->user->name}}</a></h3>
                                           <h5 class="post-date">
-                                              05 Sep 2020 at 9:17 PM  |  
-                                              <a class="replay-btn" href="#">Reply</a>
+                                              {{ Carbon\Carbon::parse($comment->created_at)->format('d M, Y')}}  |  
                                           </h5>
-                                          <p>Purus tincidunt magnis est consectetur malesuada congue tempus. Felis, tincidunt nec aliquet mattis euismod fermentum in urna dictum. Netus gravida duis montes, </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="sngle-comment ">
-                                    <div class="media align-items-center">
-                                        <a class="mr-4" href="#">
-                                            <img class="author-image" src="{{asset('assets/Mainpage/images/comment2.png')}}"  alt="comment">
-                                        </a>
-                                        <div class="media-body ">
-                                          <h3 class="author-name"><a href="#">Torrent</a></h3>
-                                          <h5 class="post-date">
-                                              05 Sep 2020 at 9:17 PM  |  
-                                              <a class="replay-btn" href="#">Reply</a>
-                                          </h5>
-                                          <p>Purus tincidunt magnis est consectetur malesuada congue tempus. Felis, tincidunt nec aliquet mattis euismod fermentum in urna dictum. Netus gravida duis montes, </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="sngle-comment">
-                                    <div class="media align-items-center">
-                                        <a class="mr-4" href="#">
-                                            <img class="author-image" src="{{asset('assets/Mainpage/images/comment1.png')}}"  alt="comment">
-                                        </a>
-                                        <div class="media-body ">
-                                          <h3 class="author-name"><a href="#">Torrent</a></h3>
-                                          <h5 class="post-date">
-                                              05 Sep 2020 at 9:17 PM  |  
-                                              <a class="replay-btn" href="#">Reply</a>
-                                          </h5>
-                                          <p>Purus tincidunt magnis est consectetur malesuada congue tempus. Felis, tincidunt nec aliquet mattis euismod fermentum in urna dictum. Netus gravida duis montes, </p>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="sngle-comment">
-                                    <div class="media align-items-center">
-                                        <a class="mr-4" href="#">
-                                            <img class="author-image" src="{{asset('assets/Mainpage/images/comment1.png')}}"  alt="comment">
-                                        </a>
-                                        <div class="media-body ">
-                                          <h3 class="author-name"><a href="#">Torrent</a></h3>
-                                          <h5 class="post-date">
-                                              05 Sep 2020 at 9:17 PM  |  
-                                              <a class="replay-btn" href="#">Reply</a>
-                                          </h5>
-                                          <p>Purus tincidunt magnis est consectetur malesuada congue tempus. Felis, tincidunt nec aliquet mattis euismod fermentum in urna dictum. Netus gravida duis montes, </p>
+                                          <p>
+                                            {{$comment->messege}}
+                                          </p>
                                         </div>
                                     </div>
                                 </li>
                             </ul>
                         </div>
+                            
+                        @endforeach
+                        @endif
                     </article>
                 </div>
                 <div class="section-wrap mt-50">
                     <h2 class="sectin-wrap-title">Write a comment</h2>
                     <div class="comment-form">
-                        <form action="#">
+                        <form action="{{route('blog.comment.store')}}" method="POST">
+                            @csrf
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="firstname" name="firstname" required placeholder="First Name" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="lastname" name="lastname" required placeholder="Last Name" />
+                                        <input type="text" class="form-control" id="email" name="name" required placeholder="Name" value="{{Auth::user()  ? Auth::user()->name : ''}}" readonly/>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="email" name="email" required placeholder="Email" />
+                                        <input type="email" class="form-control" id="email" name="email" required value="{{Auth::user()  ? Auth::user()->email : ''}}" readonly/>
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group">
-                                        <textarea class="message-box" id="message" rows="3" placeholder="Message"></textarea>
+                                        <textarea class="message-box" id="message" name="messege" rows="3" placeholder="Message"></textarea>
                                       </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn-style-two secondary-bg border-0">Send Comment</button>
+                            <input type="hidden" name="blog_id" value="{{$blog->id}}">
+                            @if(Auth::user())
+                                <button type="submit" class="btn-style-two secondary-bg border-0">Send Comment</button>
+                            @else
+                                <a type="button" type="submit" class="btn-style-two secondary-bg border-0" href="{{route('login.form')}}">Login</a>
+                            @endif
                         </form>
                     </div>
                 </div>

@@ -18,16 +18,20 @@
                     <div class="topbar-right ">
                         <ul>
                             <li class="account dropdown">
-                                <a href="#"> <i class="user-icon fas fa-user-circle"></i> Account <i class="angle-down fa fa-angle-down"></i></a>
+                                <a href="#"> <i class="user-icon fas fa-user-circle"></i> {{Auth::user() ? AUth::user()->name : 'Account'}} <i class="angle-down fa fa-angle-down"></i></a>
                                 <ul class="dropdon-itme">
 
-                                    <li><a href="{{route('login.form')}}">Sign In</a></li>
-                                    <li><a href="{{route('signup.form')}}">Sign Up</a></li>
-                                    <li><a href="reset-password.html">Reset Password</a></li>
-                                    <li><a href="#">profile</a></li>
-                                    <li><a href="#">notifications</a></li>
-                                    <li><a href="#">settings</a></li>
-                                    <li><a href="#">log out</a></li>
+                                    @if(Auth::user())                                    
+                                        <li><a href="#">profile</a></li>
+                                        <li><a href="#">notifications</a></li>
+                                        <li><a href="#">settings</a></li>
+                                        <li><a href="{{route('logout')}}">log out</a></li>
+
+                                    @else
+                                        <li><a href="{{route('login.form')}}">Sign In</a></li>
+                                      <li><a href="{{route('signup.form')}}">Sign Up</a></li>
+                                      <li><a href="reset-password.html">Reset Password</a></li>
+                                    @endif
                                 </ul>
                             </li>
                             <li class="currancy dropdown">

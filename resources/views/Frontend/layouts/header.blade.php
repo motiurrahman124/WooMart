@@ -20,13 +20,9 @@
                             <li class="account dropdown">
                                 <a href="#"> <i class="user-icon fas fa-user-circle"></i> Account <i class="angle-down fa fa-angle-down"></i></a>
                                 <ul class="dropdon-itme">
-<<<<<<< HEAD
-                                    <li><a href="{{ route('login.form') }}">Sign In</a></li>
-                                    <li><a href="{{ route('signup.form') }}">Sign Up</a></li>
-=======
+
                                     <li><a href="{{route('login.form')}}">Sign In</a></li>
                                     <li><a href="{{route('signup.form')}}">Sign Up</a></li>
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
                                     <li><a href="reset-password.html">Reset Password</a></li>
                                     <li><a href="#">profile</a></li>
                                     <li><a href="#">notifications</a></li>
@@ -116,10 +112,7 @@
     </div>
     <!-- header-middle-aera star here   -->
     <!-- header bottom area  start here  -->
-<<<<<<< HEAD
 
-=======
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
     @if(isset($menu) && $menu == 'home')
     <div class="header-botom-area">
         <div class="container">
@@ -236,12 +229,8 @@
                     <nav class="main-menu-area">
                         <ul>
                             <li class="current-menu-item">
-<<<<<<< HEAD
                                 <a href="{{ route('home') }}">Home</i></a>
-                                
-=======
-                                <a href="{{route('home')}}">Home</i></a>                           
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
+
                             </li>
                             <li class="mega-menu-itms position-static">
                                 <a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
@@ -330,13 +319,7 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
-    @else
-
-=======
      @else 
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
     <div class="header-botom-area">
         <div class="container">
             <div class="row">
@@ -362,12 +345,8 @@
                     <nav class="main-menu-area">
                         <ul>
                             <li>
-<<<<<<< HEAD
                                 <a href="{{ route('home') }}">Home </i></a>
-                                
-=======
-                                <a href="{{route('home')}}">Home</i></a>                           
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
+
                             </li>
                             <li class="mega-menu-itms position-static">
                                 <a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
@@ -456,13 +435,6 @@
             </div>
         </div>
     </div>
-<<<<<<< HEAD
-
     @endif
-=======
-    @endif
-
-   
->>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
     <!-- header bottom area  end here  -->
 </header>

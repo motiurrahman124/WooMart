@@ -21,6 +21,7 @@
                         </blockquote>
                         <p  class="post-content">{{ $blog->second_section_description }}</p>
                         <div class="blog-meta">
+
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <ul class="meta-box">

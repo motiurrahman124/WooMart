@@ -1,9 +1,9 @@
 <?php
 
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\UserAuthController;
 
 /*
@@ -19,11 +19,13 @@ use App\Http\Controllers\UserAuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+
 Route::get('/login', [UserAuthController::class, 'signin'])->name('login.form');
 Route::post('/login-check', [UserAuthController::class, 'login'])->name('loginCheck');
 
 Route::get('/signup', [UserAuthController::class, 'signup'])->name('signup.form');
 Route::post('/signup-check', [UserAuthController::class, 'signup'])->name('signup.store');
+
 
 Route::group(['prefix' => 'blog'], function(){
     Route::get('/', [HomeController::class, 'blog'])->name('blog');

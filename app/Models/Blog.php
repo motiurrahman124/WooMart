@@ -14,4 +14,12 @@ class Blog extends Model
     {
         return $this->belongsTo(User::class, 'author_id');
     }
+<<<<<<< HEAD
+=======
+
+    public function getImageAttribute($image)
+    {
+        return asset($image);
+    }
+>>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
 }

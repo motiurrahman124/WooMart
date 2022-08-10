@@ -1292,7 +1292,10 @@
 </section>
 <!-- New Arrivals area end here  -->
 <!-- blog area start here  -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
 @if(isset($data['recent_blogs'][0]))
 <section class="blog-area home-two-blog mt-50">
     <div class="container">
@@ -1333,12 +1336,14 @@
                         </article>
 
                         @endforeach
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+@endif
 
 @endif
 

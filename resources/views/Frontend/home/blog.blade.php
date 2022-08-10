@@ -18,6 +18,7 @@
                                         <div class="post-thumbnail">
                                             <a href="{{ route('single_blog', encrypt($data->id)) }}">
                                                 <img src="{{$data->image}}" alt="blog" />
+
                                             </a>
                                             <span class="blog-date">{{ Carbon\Carbon::parse($data->created_at)->Format('d M, Y') }}</span>
                                         </div>
@@ -31,10 +32,152 @@
                                                 </li>
                                             </ul>
                                             <h2 class="post-title">
+<<<<<<< HEAD
                                                 <a href="{{ route('single_blog', encrypt($data->id)) }}">{{ substr($data->title,0,28) }}</a>
                                             </h2>
                                             <p class="post-content">{{ substr($data->first_section_description,0,150) }}</p>
                                             <a href="{{ route('single_blog', encrypt($data->id)) }}" class="post-btn">
+=======
+                                                <a href="{{ route('single_blog', 1) }}">Nunc quis phasellus mi sed. </a>
+                                            </h2>
+                                            <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
+                                            <a href="{{ route('single_blog', 1) }}" class="post-btn">
+                                                Read More <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <article  class="single-post">
+                                        <div class="post-thumbnail">
+                                            <a href="single-blog.html">
+                                                <img src="{{asset('assets/Mainpage/images/blog/2.jpg')}}" alt="blog" />
+                                            </a>
+                                            <span class="blog-date">15 Sep, 20</span>
+                                        </div>
+                                        <div class="post-info">
+                                            <ul class="post-meta">
+                                                <li class="author">
+                                                    <a href="#"><i class="far fa-user"></i>John Doe</a>
+                                                </li>
+                                                <li class="comments">
+                                                    <a href="#"><i class="far fa-comments"></i>32 Comments</a>
+                                                </li>
+                                            </ul>
+                                            <h2 class="post-title">
+                                                <a href="single-blog.html">Nunc quis phasellus mi sed. </a>
+                                            </h2>
+                                            <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
+                                            <a href="single-blog.html" class="post-btn">
+                                                Read More <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <article  class="single-post">
+                                        <div class="post-thumbnail">
+                                            <a href="single-blog.html">
+                                                <img src="{{asset('assets/Mainpage/images/blog/3.jpg')}}" alt="blog" />
+                                            </a>
+                                            <span class="blog-date">15 Sep, 20</span>
+                                        </div>
+                                        <div class="post-info">
+                                            <ul class="post-meta">
+                                                <li class="author">
+                                                    <a href="#"><i class="far fa-user"></i>John Doe</a>
+                                                </li>
+                                                <li class="comments">
+                                                    <a href="#"><i class="far fa-comments"></i>32 Comments</a>
+                                                </li>
+                                            </ul>
+                                            <h2 class="post-title">
+                                                <a href="single-blog.html">Nunc quis phasellus mi sed. </a>
+                                            </h2>
+                                            <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
+                                            <a href="single-blog.html" class="post-btn">
+                                                Read More <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <article  class="single-post">
+                                        <div class="post-thumbnail">
+                                            <a href="single-blog.html">
+                                                <img src="{{asset('assets/Mainpage/images/blog/4.jpg')}}" alt="blog" />
+                                            </a>
+                                            <span class="blog-date">15 Sep, 20</span>
+                                        </div>
+                                        <div class="post-info">
+                                            <ul class="post-meta">
+                                                <li class="author">
+                                                    <a href="#"><i class="far fa-user"></i>John Doe</a>
+                                                </li>
+                                                <li class="comments">
+                                                    <a href="#"><i class="far fa-comments"></i>32 Comments</a>
+                                                </li>
+                                            </ul>
+                                            <h2 class="post-title">
+                                                <a href="single-blog.html">Nunc quis phasellus mi sed. </a>
+                                            </h2>
+                                            <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
+                                            <a href="single-blog.html" class="post-btn">
+                                                Read More <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <article  class="single-post">
+                                        <div class="post-thumbnail">
+                                            <a href="single-blog.html">
+                                                <img src="{{asset('assets/Mainpage/images/blog/5.jpg')}}" alt="blog" />
+                                            </a>
+                                            <span class="blog-date">15 Sep, 20</span>
+                                        </div>
+                                        <div class="post-info">
+                                            <ul class="post-meta">
+                                                <li class="author">
+                                                    <a href="#"><i class="far fa-user"></i>John Doe</a>
+                                                </li>
+                                                <li class="comments">
+                                                    <a href="#"><i class="far fa-comments"></i>32 Comments</a>
+                                                </li>
+                                            </ul>
+                                            <h2 class="post-title">
+                                                <a href="single-blog.html">Nunc quis phasellus mi sed. </a>
+                                            </h2>
+                                            <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
+                                            <a href="single-blog.html" class="post-btn">
+                                                Read More <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </article>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <article  class="single-post">
+                                        <div class="post-thumbnail">
+                                            <a href="single-blog.html">
+                                                <img src="{{asset('assets/Mainpage/images/blog/6.jpg')}}" alt="blog" />
+                                            </a>
+                                            <span class="blog-date">15 Sep, 20</span>
+                                        </div>
+                                        <div class="post-info">
+                                            <ul class="post-meta">
+                                                <li class="author">
+                                                    <a href="#"><i class="far fa-user"></i>John Doe</a>
+                                                </li>
+                                                <li class="comments">
+                                                    <a href="#"><i class="far fa-comments"></i>32 Comments</a>
+                                                </li>
+                                            </ul>
+                                            <h2 class="post-title">
+                                                <a href="single-blog.html">Nunc quis phasellus mi sed. </a>
+                                            </h2>
+                                            <p class="post-content">Leo at bibendum duis libero sed. Sapien lobortis vel id velit </p>
+                                            <a href="single-blog.html" class="post-btn">
+>>>>>>> b61ef255aa01ce8665ae58b42acae15d0193180d
                                                 Read More <i class="fas fa-arrow-right"></i>
                                             </a>
                                         </div>

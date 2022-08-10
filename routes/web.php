@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,12 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/login', [AuthController::class, 'login'])->name('login.form');
-Route::post('/login-check', [AuthController::class, 'login'])->name('loginCheck');
 
+Route::get('/login', [UserAuthController::class, 'signin'])->name('login.form');
+Route::post('/login-check', [UserAuthController::class, 'login'])->name('loginCheck');
 
-Route::get('/sign-up', [AuthController::class, 'signup'])->name('signup.form');
-Route::post('/sign-up-store', [AuthController::class, 'signup'])->name('signup.store');
-
+Route::get('/signup', [UserAuthController::class, 'signup'])->name('signup.form');
+Route::post('/signup-check', [UserAuthController::class, 'signup'])->name('signup.store');
 
 
 Route::group(['prefix' => 'blog'], function(){

@@ -5,23 +5,23 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
+                    
+                
+
                 <div class="section-wrap">
                     <article class="sigle-post">
-                        <h2 class="post-title">{{$blog->title}} </h2>
+                        <h2 class="post-title">{{ $blog->title }} </h2>
                         <div class="post-thumbnail">
-                            <img src="{{$blog->image}}" alt="post image" />
-                            <span class="post-date">{{Carbon\Carbon::parse($blog->created_at)->format('d M, Y')}}</span>
+                            <img src="{{asset($blog->image)}}" alt="post image" />
+                            <span class="post-date">{{ Carbon\Carbon::parse($blog->created_at)->Format('d M, Y') }}</span>
                         </div>
-                        <p>
-                            {{$blog->first_section_description}}
-                        </p>
-                         <blockquote class="blockquote">
-                            <q>{{$blog->quatation}}</q>
+                        <p class="post-content">{{ $blog->first_section_description }}</p>
+                        <blockquote class="blockquote">
+                            <q>{{ $blog->quatation }}</q>
                         </blockquote>
-                        <p>
-                            {{$blog->second_section_description}}
-                        </p>
-                         <div class="blog-meta">
+                        <p  class="post-content">{{ $blog->second_section_description }}</p>
+                        <div class="blog-meta">
+
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">
                                     <ul class="meta-box">

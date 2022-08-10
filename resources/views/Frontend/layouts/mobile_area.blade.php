@@ -32,7 +32,7 @@
                     <ul class="autocomplite-box">
                         <li>Wooman </li>
                         <li>Man </li>
-                        <li>babye</li>
+                        <li>baby</li>
                         <li>shart</li>
                         <li>pant</li>
                         <li>show</li>

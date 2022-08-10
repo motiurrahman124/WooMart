@@ -11,9 +11,9 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue malesuada in sit sit ultrices nibh sit.</p>
                                 </div>
                                 <div class="register-form">
-                                    <form action="#">
+                                    <form action="{{ route('signup.store') }}">
                                         <div class="form-group ">
-                                          <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" />
+                                          <input type="text" class="form-control" name="name" id="fullname" placeholder="Full Name" />
                                           <i class="icon fas fa-user"></i>
                                         </div>
                                         <div class="form-group ">
@@ -40,9 +40,10 @@
                                       </form>
                                 </div>
                                 <div class="register-bottom text-center">
+                                    
                                     <p class="have-account mb-0">
                                         Already have an account? 
-                                        <a href="{{route('login.form')}}">Sign In Now</a>
+                                        <a href="{{ route('login.form') }}">Sign In Now</a>
                                     </p>
                                 </div>
                             </div>

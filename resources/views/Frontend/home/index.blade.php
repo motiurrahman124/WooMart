@@ -1292,6 +1292,8 @@
 </section>
 <!-- New Arrivals area end here  -->
 <!-- blog area start here  -->
+
+@if(isset($data['recent_blogs'][0]))
 <section class="blog-area home-two-blog mt-50">
     <div class="container">
         <div class="row">
@@ -1314,17 +1316,17 @@
                             <div class="post-info">
                                 <ul class="post-meta">
                                     <li class="author">
-                                        <a href="#"><i class="far fa-user"></i>John Doe</a>
+                                        <a href="#"><i class="far fa-user"></i>{{ $blog->author->name }}</a>
                                     </li>
                                     <li class="comments">
                                         <a href="#"><i class="far fa-comments"></i>32 Comments</a>
                                     </li>
                                 </ul>
                                 <h2 class="post-title">
-                                    <a href="single-blog.html">{{ $blog->title }}</a>
+                                    <a href="single-blog.html">{{ substr($blog->title,0,28) }}</a>
                                 </h2>
-                                <p class="post-content">{{ $blog->first_section_description }}</p>
-                                <a href="single-blog.html" class="post-btn">
+                                <p class="post-content">{{ substr($blog->first_section_description,0,150) }}</p>
+                                <a href="{{ route('single_blog', encrypt($blog->id)) }}" class="post-btn">
                                     Read More <i class="fas fa-arrow-right"></i>
                                 </a>
                             </div>
@@ -1337,5 +1339,7 @@
         </div>
     </div>
 </section>
+
+@endif
 
 @endsection

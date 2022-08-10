@@ -11,9 +11,9 @@
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Augue malesuada in sit sit ultrices nibh sit.</p>
                                 </div>
                                 <div class="register-form">
-                                    <form action="#">
+                                    <form action="{{ route('signup.store') }}">
                                         <div class="form-group ">
-                                          <input type="text" class="form-control" name="fullname" id="fullname" placeholder="Full Name" />
+                                          <input type="text" class="form-control" name="name" id="fullname" placeholder="Full Name" />
                                           <i class="icon fas fa-user"></i>
                                         </div>
                                         <div class="form-group ">
@@ -40,16 +40,10 @@
                                       </form>
                                 </div>
                                 <div class="register-bottom text-center">
-                                    <div class="bottom-title">
-                                        <h3>Or</h3>
-                                    </div>
-                                    <ul class="btn-list d-flex align-items-center justify-content-between">
-                                        <li><a class="login-btn facebook" href="#"><i class="fab fa-facebook-f"></i>Log In with Facebook</a></li>
-                                        <li><a class="login-btn google" href="#"><i class="fab fa-google"></i>Log In with Google</a></li>
-                                    </ul>
+                                    
                                     <p class="have-account mb-0">
                                         Already have an account? 
-                                        <a href="sign-in.html">Sign In Now</a>
+                                        <a href="{{ route('login.form') }}">Sign In Now</a>
                                     </p>
                                 </div>
                             </div>

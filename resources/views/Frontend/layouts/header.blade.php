@@ -20,8 +20,8 @@
                             <li class="account dropdown">
                                 <a href="#"> <i class="user-icon fas fa-user-circle"></i> Account <i class="angle-down fa fa-angle-down"></i></a>
                                 <ul class="dropdon-itme">
-                                    <li><a href="sign-in.html">Sign In</a></li>
-                                    <li><a href="sign-up.html">Sign Up</a></li>
+                                    <li><a href="{{ route('login.form') }}">Sign In</a></li>
+                                    <li><a href="{{ route('signup.form') }}">Sign Up</a></li>
                                     <li><a href="reset-password.html">Reset Password</a></li>
                                     <li><a href="#">profile</a></li>
                                     <li><a href="#">notifications</a></li>
@@ -228,14 +228,8 @@
                     <nav class="main-menu-area">
                         <ul>
                             <li class="current-menu-item">
-                                <a href="#">Home <i class="fa fa-angle-down"></i></a>
-                                <ul class="submenu-items">
-                                    <li><a href="index.html">home v1</a></li>
-                                    <li><a href="index2.html">home v2</a></li>
-                                    <li><a href="index3.html">home v3</a></li>
-                                    <li><a href="index4.html">home v4</a></li>
-                                    <li><a href="index5.html">home v5</a></li>
-                                </ul>
+                                <a href="{{ route('home') }}">Home</i></a>
+                                
                             </li>
                             <li class="mega-menu-itms position-static">
                                 <a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
@@ -352,14 +346,8 @@
                     <nav class="main-menu-area">
                         <ul>
                             <li>
-                                <a href="#">Home <i class="fa fa-angle-down"></i></a>
-                                <ul class="submenu-items">
-                                    <li><a href="index.html">home v1</a></li>
-                                    <li><a href="index2.html">home v2</a></li>
-                                    <li><a href="index3.html">home v3</a></li>
-                                    <li><a href="index4.html">home v4</a></li>
-                                    <li><a href="index5.html">home v5</a></li>
-                                </ul>
+                                <a href="{{ route('home') }}">Home </i></a>
+                                
                             </li>
                             <li class="mega-menu-itms position-static">
                                 <a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>

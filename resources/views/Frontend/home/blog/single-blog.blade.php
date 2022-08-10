@@ -10,17 +10,16 @@
 
                 <div class="section-wrap">
                     <article class="sigle-post">
-                        <h2 class="post-title">Feugiat cursus maecenas magna quam ut varius nibh mauris. Cursus lectus quam erat fringilla. </h2>
+                        <h2 class="post-title">{{ $blog->title }} </h2>
                         <div class="post-thumbnail">
-                            <img src="{{asset('assets/Mainpage/images/blog/single-post-thumbnail.jpg')}}" alt="post image" />
-                            <span class="post-date">15 Sep, 20</span>
+                            <img src="{{asset($blog->image)}}" alt="post image" />
+                            <span class="post-date">{{ Carbon\Carbon::parse($blog->created_at)->Format('d M, Y') }}</span>
                         </div>
-                        <p class="post-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu cursus lorem a dictum duis pharetra tempor ultrices enim. Id cras sit est maecenas risus cursus. Aliquet phasellus est mauris porta semper semper. In ultricies pharetra, aliquam elit dignissim enim donec est, laoreet. Viverra lacinia proin est, ultricies fringilla fringilla et. Pulvinar nulla tristique lacus cras diam quis est. Tortor pulvinar hendrerit imperdiet pulvinar augue neque congue. Blandit montes, eu adipiscing rhoncus nec sed non volutpat tellus. Bibendum viverra amet porta vulputate id nibh sodales pulvinar habitasse.</p>
-                        <p  class="post-content">Commodo ante imperdiet quis lacus aenean lacinia nisl. Metus, rhoncus fermentum diam vitae laoreet amet. Suspendisse sem sit molestie aliquam eu amet. At blandit neque.</p>
+                        <p class="post-content">{{ $blog->first_section_description }}</p>
                         <blockquote class="blockquote">
-                            <q>Commodo ante imperdiet quis lacus aenean lacinia nisl. Metus, rhoncus fermentum diam vitae laoreet amet. Suspendisse sem sit molestie aliquam eu amet. At blandit neque.</q>
+                            <q>{{ $blog->quatation }}</q>
                         </blockquote>
-                        <p  class="post-content">Pulvinar nulla tristique lacus cras diam quis est. Tortor pulvinar hendrerit imperdiet pulvinar augue neque congue. Blandit montes, eu adipiscing rhoncus nec sed non volutpat tellus. Bibendum viverra amet porta vulputate id nibh sodales pulvinar habitasse.</p>
+                        <p  class="post-content">{{ $blog->second_section_description }}</p>
                         <div class="blog-meta">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6">

@@ -204,33 +204,6 @@
     </div>
 </section>
 <!-- Product Categories area end here  -->
-<!-- offer area start here  -->
-<section class="offer-area mt-50">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="offer-big-banner">
-                    <a href="#">
-                        <img class="banner-image" src="{{asset('assets/Mainpage/images/offer/offer-big-banner.jpg')}}" alt="offer images" />
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="offer-small-banner mb-30">
-                    <a href="#">
-                        <img class="banner-image" src="{{asset('assets/Mainpage/images/offer/offer-small-image1.jpg')}}" alt="offer images" />
-                    </a>
-                </div>
-                <div class="offer-small-banner">
-                    <a href="#">
-                        <img class="banner-image" src="{{asset('assets/Mainpage/images/offer/offer-small-image2.jpg')}}" alt="offer images" />
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- offer area end here  -->
 <!-- Featured Product area start here  -->
 <section class="featured-product featured-two-v2 mt-50">
     <div class="container">
@@ -806,29 +779,6 @@
     </div>
 </section>
 <!-- Featured Product area start here  -->
-<!-- Trendy Fashion area start here  -->
-<section class="trend-fashion-area mt-50">
-    <div class="container">
-        <div class="trend-slide">
-            <div class="single-trend">
-                <div class="trend-image">
-                    <a href="#"><img src="{{asset('assets/Mainpage/images/trend-fashion.png')}}" alt="trend" /></a>
-                </div>
-            </div>
-            <div class="single-trend">
-                <div class="trend-image">
-                    <a href="#"><img src="{{asset('assets/Mainpage/images/trend-fashion.png')}}" alt="trend" /></a>
-                </div>
-            </div>
-            <div class="single-trend">
-                <div class="trend-image">
-                    <a href="#"><img src="{{asset('assets/Mainpage/images/trend-fashion.png')}}" alt="trend" /></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Trendy Fashion area end here  -->
 <!-- Best Selling Products start here   -->
 <section class="best-selling-product home-two-selling-v2 mt-50">
     <div class="container">
@@ -1038,32 +988,6 @@
     </div>
 </section>
 <!-- Best Selling Products end here   -->
-<section class="larg-banner-area mt-50">
-    <div class="container">
-        <div class="large-banner-info">
-            <div class="row no-gutters align-items-center">
-                <div class="col-lg-6">
-                    <div class="larg-banner-img">
-                        <img class="banner-img" src="{{asset('assets/Mainpage/images/banner/man-cap-image.jpg')}}" alt="banner" />
-                        <div class="round-image">
-                            <img src="{{asset('assets/Mainpage/images/banner/cap.png')}}" alt="banner" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 ">
-                    <div class="larg-banner-content">
-                        <div class="banner-content-wrap">
-                            <h2>Stylish Cap For Man</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet hendrerit fusce fermentum quis aliquet dui senectus. Sit.</p>
-                            <a class="banner-btn" href="#">Shop Now</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- New Arrivals area start here  -->
 <section class="new-arrivals-area home-two-aravel mt-50">
     <div class="container">
         <div class="row">

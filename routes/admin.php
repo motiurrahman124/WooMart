@@ -28,7 +28,7 @@ Route::group(['prefix' => 'admin'], function() {
         /**
          * Blog section
          */
-        Route::get('/blog',[BlogController::class,'index'])->name('blog.index');
+        Route::get('/blog-list',[BlogController::class,'index'])->name('blog.index');
         Route::get('/blog-create',[BlogController::class,'createBlog'])->name('createBlog');
         Route::post('/blog-store',[BlogController::class,'createNewBlog'])->name('createNewBlog');
         

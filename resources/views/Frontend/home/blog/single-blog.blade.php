@@ -26,10 +26,10 @@
                                 <div class="col-lg-6 col-md-6">
                                     <ul class="meta-box">
                                         <li>
-                                            <a href="#"><i class="far fa-user"></i> John Doe</a>
+                                            <a href="#"><i class="far fa-user"></i> {{$blog->author->name}} </a>
                                         </li>
                                         <li>
-                                            <a href="#"><i class="far fa-comments"></i> 32 Comments</a>
+                                            <a href="#"><i class="far fa-comments"> {{count($blog->comments)}}</i> </a>
                                         </li>
                                     </ul>
                                 </div>

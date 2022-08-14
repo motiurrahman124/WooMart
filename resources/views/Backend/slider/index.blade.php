@@ -11,7 +11,6 @@
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item active">Simple Tables</li>
           </ol>
         </div>
       </div>
@@ -25,12 +24,12 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Blog list</h3>
+              <h3 class="card-title">Slider list</h3>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <div class="input-group-append">
-                    <a type="button" href="{{route('createBlog')}}" class="btn btn-info">Add New</a>
+                    <a type="button" href="{{route('slide.create')}}" class="btn btn-info">Add New</a>
                   </div>
                 </div>
               </div>
@@ -41,24 +40,25 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>Date</th>
-                    <th>Image</th>
-                    <th>Title</th>
+                    <th>title 1</th>
+                    <th>Description</th>
+                    <th>Discount</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @if(isset($blogs[0]))
-                  @foreach ($blogs as $blog )
+                  @if(isset($sliders[0]))
+                  @foreach ($sliders as $slider )
                   
                   <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$blog->created_at}}</td>
-                    <td><img src="{{$blog->image}}" width="90" height="70" alt=""></td>
-                    <td>{{substr($blog->title, 0,20)}}</td>
+                    <td>{{$slider->title1}}</td>
+                    <td>{{substr($slider->deomscription, 0,20)}}</td>
+                    <td>{{$slider->discount}}</td>
+
                     <td>
-                      <a type="button" name="edit" href="{{route('blog.edit',$blog->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                      <a type="button" name="delete" href="{{route('blog.delete',$blog->id)}}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                      <a type="button" name="edit" href="{{route('slider.edit',$slider->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                      <a type="button" name="delete" href="{{route('slider.delete',$slider->id)}}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                       
                     </td>
                   </tr>

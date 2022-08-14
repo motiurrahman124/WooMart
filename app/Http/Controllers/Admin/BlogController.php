@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Auth;
 
 class BlogController extends Controller
 {
-
     public function index()
     {
         $blogs = Blog::all();
@@ -18,8 +17,9 @@ class BlogController extends Controller
     
     public function createBlog()
     {
-        return view('Backend.blog.create_blog',['menu' => 'data']);
+        return view('Backend.blog.create_blog',['menu' => 'blog']);
     }
+    
     public function createNewBlog(Request $request)
     {
         $data['author_id'] = Auth::id();
@@ -55,6 +55,8 @@ class BlogController extends Controller
         }
         return redirect()->back();
     }
+
+    
     public function update(Request $request)
     {
         if($request->image)

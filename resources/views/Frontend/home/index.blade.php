@@ -6,40 +6,29 @@
         <div class="row">
             <div class="col-lg-9 offset-lg-3">
                 <div class="slider-two-slide">
-                    <div class="single-slide" style=" background: url('{{asset('assets/Mainpage/images/slider-two-bg1.jpg')}}') no-repeat center / cover;">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-lg-5 d-none d-lg-block">
-                                <div class="banner-image">
-                                    <img src="{{asset('assets/Mainpage/images/banner-image2.png')}}" alt="banner">
-                                </div>
-                            </div>
-                            <div class="col-lg-7 ">
-                               <div class="banner-content">
-                                    <h1>Man Shopping</h1>
-                                    <h2>Up to 30% Discount</h2>
-                                    <p>In sem placerat accumsan lectus metus tortor rhoncus enim. Non vulputate quis eget</p>
-                                    <a href="#" class="banner-btn">Shop Now</a>
-                               </div>
+                  @if(isset($data['sliders'][0]))
+                  @foreach ($data['sliders'] as $slider )
+                  <div class="single-slide" style=" background: url('{{asset($slider->background_image)}}') no-repeat center / cover;">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-lg-7 ">
+                           <div class="banner-content color-text">
+                                <h1>{{$slider->title1}}</h1>
+                                <h2>{{$slider->title12}}</h2>
+                                <p>
+                                    {{$slider->description}}
+                                </p>
+                                <a href="#" class="banner-btn">Shop Now</a>
+                           </div>
+                        </div>
+                        <div class="col-lg-5 d-none d-lg-block ">
+                            <div class="banner-image mt-3">
+                                <img class="img-fluid" src="{{asset($slider->banner_image)}}" alt="banner">
                             </div>
                         </div>
                     </div>
-                    <div class="single-slide" style=" background: url('{{asset('assets/Mainpage/images/slider-two-bg2.jpg')}}') no-repeat center / cover;">
-                        <div class="row no-gutters align-items-center">
-                            <div class="col-lg-7 ">
-                               <div class="banner-content color-text">
-                                    <h1>Man Shopping</h1>
-                                    <h2>Up to 30% Discount</h2>
-                                    <p>In sem placerat accumsan lectus metus tortor rhoncus enim. Non vulputate quis eget</p>
-                                    <a href="#" class="banner-btn">Shop Now</a>
-                               </div>
-                            </div>
-                            <div class="col-lg-5 d-none d-lg-block ">
-                                <div class="banner-image mt-3">
-                                    <img class="img-fluid" src="{{asset('assets/Mainpage/images/slider-two-banner-image2.png')}}" alt="banner">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
+                  @endforeach
+                  @endif
                 </div>
             </div>
         </div>
@@ -1318,7 +1307,7 @@
                                         <a href="#"><i class="far fa-user"></i>{{ $blog->author->name }}</a>
                                     </li>
                                     <li class="comments">
-                                        <a href="#"><i class="far fa-comments"></i>32 Comments</a>
+                                        <a href="#"><i class="far fa-comments"></i>{{$blog->comments_count}} Comments</a>
                                     </li>
                                 </ul>
                                 <h2 class="post-title">

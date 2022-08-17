@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -42,14 +43,27 @@ Route::group(['prefix' => 'admin'], function() {
 
     Route::group(['prefix' => 'slider'], function () {
 
-        Route::get('list',[SliderController::class,'index'])->name('slider.index');
-        Route::get('create',[SliderController::class,'create'])->name('slide.create');
-        Route::post('store',[SliderController::class,'store'])->name('slider.store');
+        Route::get('/list',[SliderController::class,'index'])->name('slider.index');
+        Route::get('/create',[SliderController::class,'create'])->name('slide.create');
+        Route::post('/store',[SliderController::class,'store'])->name('slider.store');
         
-        Route::get('edit/{id}',[SliderController::class,'edit'])->name('slider.edit');
-        Route::post('update',[SliderController::class,'update'])->name('slider.update');
+        Route::get('/edit/{id}',[SliderController::class,'edit'])->name('slider.edit');
+        Route::post('/update',[SliderController::class,'update'])->name('slider.update');
        
-        Route::get('delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
+        Route::get('/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
+
+    });
+
+    Route::group(['prefix' => 'brand'], function () {
+
+        Route::get('/list',[BrandController::class,'index'])->name('brand.index');
+        Route::get('/create',[BrandController::class,'create'])->name('brand.create');
+        Route::post('/store',[BrandController::class,'store'])->name('brand.store');
+        
+        Route::get('/edit/{id}',[BrandController::class,'edit'])->name('brand.edit');
+        Route::post('/update',[BrandController::class,'update'])->name('brand.update');
+       
+        Route::get('/delete/{id}',[BrandController::class,'delete'])->name('brand.delete');
 
     });
 

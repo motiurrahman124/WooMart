@@ -30,7 +30,7 @@
                                         <a href="single-blog.html">{{ substr($data->title,0,28) }}</a>
                                     </h2>
                                     <p class="post-content">{{ substr($data->first_section_description,0,150) }}</p>
-                                    <a href="single-blog.html" class="post-btn">
+                                    <a href="{{ route('single_blog', encrypt($data->id)) }}" class="post-btn">
                                         Read More <i class="fas fa-arrow-right"></i>
                                     </a>
                                 </div>

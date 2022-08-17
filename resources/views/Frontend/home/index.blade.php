@@ -13,7 +13,7 @@
                         <div class="col-lg-7 ">
                            <div class="banner-content color-text">
                                 <h1>{{$slider->title1}}</h1>
-                                <h2>{{$slider->title12}}</h2>
+                                <h2>{{$slider->title2}}</h2>
                                 <p>
                                     {{$slider->description}}
                                 </p>
@@ -49,62 +49,24 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="brand-lsit brand-slide">
+
+                        @if(isset($data['brand'][0] ))
+
+                        @foreach ($data['brand']  as $data)
+
                         <div class="single-barnd d-flex justify-content-center align-items-center">
                             <a href="#">
                                 <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/1.png')}}" alt="brand" />
+                                    <img src="{{asset('$data->brand_image')}}" alt="brand" />
                                 </figure>
                             </a>
                         </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/2.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/3.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/4.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/5.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/6.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/1.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
-                        <div class="single-barnd d-flex justify-content-center align-items-center">
-                            <a href="#">
-                                <figure class="barnd-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/brands/2.png')}}" alt="brand" />
-                                </figure>
-                            </a>
-                        </div>
+
+                        @endforeach
+                        
+
+                        @endif
+                        
                         
                     </div>
                 </div>
@@ -1206,6 +1168,7 @@
 <!-- New Arrivals area end here  -->
 <!-- blog area start here  -->
 @if(isset($data['recent_blogs'][0]))
+
 <section class="blog-area home-two-blog mt-50">
     <div class="container">
         <div class="row">

@@ -24,12 +24,12 @@
         <div class="col-12">
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Slider list</h3>
+              <h3 class="card-title">Brand list</h3>
 
               <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                   <div class="input-group-append">
-                    <a type="button" href="{{route('slide.create')}}" class="btn btn-info">Add New</a>
+                    <a type="button" href="{{route('brand.create')}}" class="btn btn-info">Add New</a>
                   </div>
                 </div>
               </div>
@@ -40,27 +40,21 @@
                 <thead>
                   <tr>
                     <th>#</th>
-                    <th>title 1</th>
-                    <th>title 2</th>
-                    <th>Description</th>
-                    <th>Discount</th>
+                    <th>Brand Image</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  @if(isset($sliders[0]))
-                  @foreach ($sliders as $slider )
+                  @if(isset($brand[0]))
+                  @foreach ($brand as $brand )
                   
                   <tr>
                     <td>{{$loop->iteration}}</td>
-                    <td>{{$slider->title1}}</td>
-                    <td>{{$slider->title2}}</td>
-                    <td>{{substr($slider->description, 0,20)}}</td>
-                    <td>{{$slider->discount}}</td>
+                    <td><img src="{{$brand->brand_image}}"  width="90" height="70" alt="" /></td>
 
                     <td>
-                      <a type="button" name="edit" href="{{route('slider.edit',$slider->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
-                      <a type="button" name="delete" href="{{route('slider.delete',$slider->id)}}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
+                      <a type="button" name="edit" href="{{route('brand.edit',$brand->id)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
+                      <a type="button" name="delete" href="{{route('brand.delete',$brand->id)}}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                       
                     </td>
                   </tr>

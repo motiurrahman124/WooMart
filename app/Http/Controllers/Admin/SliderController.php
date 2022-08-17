@@ -29,6 +29,7 @@ class SliderController extends Controller
         $data['title1']         = $request->title1;
         $data['title2']         = $request->title2;
         $data['description']    = $request->description;
+        $data['discount']    = $request->discount;
 
         $data['background_image']   = fileUploade($request->background_image,'images/slider/' );
         $data['banner_image']       = fileUploade($request->banner_image,'images/slider/' );
@@ -51,20 +52,19 @@ class SliderController extends Controller
     
     public function update(Request $request)
     {
-        if($request->image)
+        if($request->image1)
         {
-            $image = $request->image;
-            $name = $image->getClientOriginalName();
-            $imagename = time()."_".$name;
-            $destination = public_path('images');
-            $image->move($destination,$imagename);
-            $data['image'] = 'images/'.$imagename;  
+            $data['background_image']   = fileUploade($request->background_image,'images/slider/' ); 
+        }
+        if($request->image2)
+        {
+            $data['banner_image']       = fileUploade($request->banner_image,'images/slider/' );
         }
 
-        $data['title'] = $request->title;
-        $data['first_section_description'] = $request->firstSection;
-        $data['quatation'] = $request->quatation;
-        $data['second_section_description'] = $request->secondSection;
+        $data['title1'] = $request->title1;
+        $data['title2'] = $request->title2;
+        $data['description'] = $request->description;
+        $data['discount'] = $request->discount;
 
         $slider = slider::where('id', $request->id)->first();
         $slider->update($data);

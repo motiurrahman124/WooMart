@@ -9,4 +9,9 @@ class Brand extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function getBrandImageAttribute($brand_image)
+    {
+        return asset($brand_image);
+    }
 }

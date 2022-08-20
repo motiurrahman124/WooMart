@@ -16,7 +16,7 @@ class HomeController extends Controller
         $data['brand']        = Brand::orderBy('id','desc')->get();
 
         
-        return view('Frontend.home.index',['menu' => 'home', 'data' => $data]);
+        return view('Frontend.home.index',['data' => $data, 'menu' => 'home']);
     }
 
     

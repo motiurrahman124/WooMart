@@ -57,7 +57,7 @@
                         <div class="single-barnd d-flex justify-content-center align-items-center">
                             <a href="#">
                                 <figure class="barnd-thumbnail">
-                                    <img src="{{asset('$data->brand_image')}}" alt="brand" />
+                                    <img src="{{$data->brand_image}}" alt="brand" />
                                 </figure>
                             </a>
                         </div>

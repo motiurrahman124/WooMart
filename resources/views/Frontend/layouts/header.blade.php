@@ -22,9 +22,7 @@
                                 <ul class="dropdon-itme">
 
                                     @if(Auth::user())                                    
-                                        <li><a href="#">profile</a></li>
-                                        <li><a href="#">notifications</a></li>
-                                        <li><a href="#">settings</a></li>
+                                        <li><a href="{{route('profile')}}">profile</a></li>
                                         <li><a href="{{route('logout')}}">log out</a></li>
 
                                     @else

@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\UserAuthController;
 
 /*
@@ -27,6 +28,18 @@ Route::get('/signup', [UserAuthController::class, 'signup'])->name('signup.form'
 Route::post('/signup-check', [UserAuthController::class, 'signup'])->name('signup.store');
 
 Route::get('/logout', [UserAuthController::class, 'logout'])->name('logout');
+
+
+Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function(){
+
+    Route::get('/', [ProfileController::class, 'profile'])->name('profile');
+    Route::post('/update', [ProfileController::class, 'update'])->name('profile.update');
+    
+    Route::get('/password-change', [ProfileController::class, 'passwordChange'])->name('password.change');
+    Route::post('/password-change-process', [ProfileController::class, 'passwordChangeProcess'])->name('password.change.process');
+
+});
+
 
 
 Route::group(['prefix' => 'blog'], function(){

@@ -42,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getImageAttribute($image) 
+    {
+        return $image ? asset($image) : asset('assets/Mainpage/images/account-profile.png');
+    }
 }

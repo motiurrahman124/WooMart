@@ -71,6 +71,18 @@
               </p>
             </a>
           </li>
+
+
+          <li class="nav-item">
+            <a href="{{ route('brand.index') }}" class="nav-link {{ isset($menu) && $menu == 'brand' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Brand List
+              </p>
+            </a>
+          </li>
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

@@ -123,106 +123,19 @@
                     <div class="categories-list-v2 ">
                         <h3 class="catagory-name"><i class="fas fa-bars"></i> All Categories </h3>
                         <ul class="catagory-items">
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c1.svg')}}" alt="icon" /> Men’s Clothing  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c2.svg')}}" alt="icon" /> Women’s Clothing</a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c3.svg')}}" alt="icon" /> Phones & Accessories  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c4.svg')}}" alt="icon" /> Computer, Office Security  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c5.svg')}}" alt="icon" /> Consumer Electronics  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c6.svg')}}" alt="icon" /> Jewelry & Watches  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c7.svg')}}" alt="icon" /> Home Appliance  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c8.svg')}}" alt="icon" /> Bags & Shoes  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c9.svg')}}" alt="icon" /> Toys, Kids & Baby  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-catagory-submenu">
-                                <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c10.svg')}}" alt="icon" /> Sports & Outdoors  <i class="fas fa-angle-right float-right"></i></a>
-                                <ul class="catagory-submenu-lsit">
-                                    <li><a class="catagory-title" href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                    <li><a href="#">Man Clothing</a></li>
-                                </ul>
-                            </li>
+                            @foreach ($categories  as $category )
+                                <li class="has-catagory-submenu">
+                                    <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c1.svg')}}" alt="icon" /> {{$category->name}} @if(isset($category->child[0])) <i class="fas fa-angle-right float-right"></i> @endif </a>
+                                    @if(isset($category->child[0]))
+                                        <ul class="catagory-submenu-lsit">
+                                            @foreach ($category->child as $subcategory )
+                                                <li><a class="catagory-title" href="#">{{$subcategory->name}}</a></li>
+                                            @endforeach
+                                        </ul>
+                                    @endif
+                                </li>
+                            @endforeach
+
                         </ul>
                     </div>
                     <a id="menu-bars" class="text-right d-block d-md-none" href="#"><i class="fa fa-bars"></i></a>

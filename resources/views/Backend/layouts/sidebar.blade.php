@@ -82,6 +82,17 @@
             </a>
           </li>
 
+          
+
+          <li class="nav-item">
+            <a href="{{ route('category.index') }}" class="nav-link {{ isset($menu) && $menu == 'category' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Category
+              </p>
+            </a>
+          </li>
+
 
         </ul>
       </nav>

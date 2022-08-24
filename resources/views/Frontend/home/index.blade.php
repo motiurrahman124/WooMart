@@ -89,76 +89,18 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="categories-lsit categories-slide">
+                        @foreach ($top_categories as $top_category )
                         <div class="single-categories">
                             <a href="#">
                                 <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/7.png')}}" alt="categories" />
+                                    <img src="{{$top_category->banner}}" alt="categories" />
                                     <div class="overlay-content"><span class="categories-title">Girls Sweter</span></div>
                                 </figure>
                             </a>
-                            <span class="categories-name">Girls Sweter</span>
+                            <span class="categories-name">{{$top_category->name}}<</span>
                             <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="single-categories">
-                            <a href="#">
-                                <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/8.png')}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Men T-Shirt</span></div>
-                                </figure>
-                            </a>
-                            <span class="categories-name">Men T-Shirt</span>
-                            <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="single-categories">
-                            <a href="#">
-                                <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/9.png')}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Men pant</span></div>
-                                </figure>
-                            </a>
-                            <span class="categories-name">Men pant</span>
-                            <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="single-categories">
-                            <a href="#">
-                                <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/10.png')}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Girls Style T-shirt</span></div>
-                                </figure>
-                            </a>
-                            <span class="categories-name">Girls Style T-shirt</span>
-                            <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="single-categories">
-                            <a href="#">
-                                <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/11.png')}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Boy’s Snickers</span></div>
-                                </figure>
-                            </a>
-                            <span class="categories-name">Boy’s Snickers</span>
-                            <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="single-categories">
-                            <a href="#">
-                                <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/12.png')}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Girls Suit</span></div>
-                                </figure>
-                            </a>
-                            <span class="categories-name">Girls Suit</span>
-                            <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
-                        <div class="single-categories">
-                            <a href="#">
-                                <figure class="categories-thumbnail">
-                                    <img src="{{asset('assets/Mainpage/images/categories/4.png')}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Girls Sweter</span></div>
-                                </figure>
-                            </a>
-                            <span class="categories-name">Girls Sweter</span>
-                            <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        </div>                            
+                        @endforeach
                     </div>
                 </div>
             </div>

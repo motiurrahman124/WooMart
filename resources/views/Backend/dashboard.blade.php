@@ -6,6 +6,8 @@
 
   <!-- Navbar -->
   @include('Backend.layouts.header')
+  @include('sweetalert::alert')
+
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->

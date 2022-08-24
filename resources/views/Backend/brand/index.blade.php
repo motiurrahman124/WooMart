@@ -40,6 +40,7 @@
                 <thead>
                   <tr>
                     <th>#</th>
+                    <th>Brand Title</th>
                     <th>Brand Image</th>
                     <th>Action</th>
                   </tr>
@@ -50,6 +51,7 @@
                   
                   <tr>
                     <td>{{$loop->iteration}}</td>
+                    <td>{{$brand->title}}</td>
                     <td><img src="{{$brand->brand_image}}"  width="90" height="70" alt="" /></td>
 
                     <td>

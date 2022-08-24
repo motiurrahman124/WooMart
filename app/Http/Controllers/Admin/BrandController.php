@@ -26,6 +26,7 @@ class BrandController extends Controller
     {
 
         $data['brand_image']   = fileUploade($request->image,'images/brand/' );
+        $data['title']   = $request->title;
 
         Brand::create($data);
 
@@ -50,6 +51,7 @@ class BrandController extends Controller
         {
             $data['brand_image']   = fileUploade($request->image,'images/brand/' ); 
         }
+        $data['title'] = $request->title;
 
 
         $brand = Brand::where('id', $request->id)->first();

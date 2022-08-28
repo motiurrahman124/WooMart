@@ -46,10 +46,11 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = category::where(['id' => $id])->first();
+        $categories = Category::where(['parent_id' => 0])->get();
 
         if(!empty($category))
         {
-            return view('Backend.category.edit',['category' =>$category, 'menu' => 'category']);
+            return view('Backend.category.edit',['category' =>$category, 'menu' => 'category', 'categories' =>$categories]);
         }
         return redirect()->back();
     }
@@ -57,13 +58,23 @@ class CategoryController extends Controller
     
     public function update(Request $request)
     {
-        if($request->image)
+       
+        $request->validate([
+            'name' => 'required'
+        ]);
+       
+        if($request->banner)
         {
-            $data['category_image']   = fileUploade($request->image,'images/category/' ); 
+            $data['banner']   = fileUploade($request->banner,IMAGE_CATEGORY_PATH); 
         }
 
+       
+        $data['name']   = $request->name;
+        $data['parent_id']   = $request->parent_id; 
+        $data['is_top_product_category']   = $request->is_top_product_category == 'on' ? true : false;
+        
 
-        $category = category::where('id', $request->id)->first();
+        $category = Category::where('id', $request->id)->first();
         $category->update($data);
 
         return redirect ()->route('category.index');

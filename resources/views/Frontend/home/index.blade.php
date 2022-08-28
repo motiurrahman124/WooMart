@@ -94,10 +94,10 @@
                             <a href="#">
                                 <figure class="categories-thumbnail">
                                     <img src="{{$top_category->banner}}" alt="categories" />
-                                    <div class="overlay-content"><span class="categories-title">Girls Sweter</span></div>
+                                    <div class="overlay-content"><span class="categories-title">{{$top_category->name}}</span></div>
                                 </figure>
                             </a>
-                            <span class="categories-name">{{$top_category->name}}<</span>
+                            <span class="categories-name">{{$top_category->name}}</span>
                             <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
                         </div>                            
                         @endforeach

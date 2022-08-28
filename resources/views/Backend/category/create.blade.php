@@ -25,21 +25,45 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Add Brand</h3>
+                  <h3 class="card-title">Add Category</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{ route('brand.store') }}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                   <div class="card-body">
                     
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Category Name</label>
+                      <input type="text" name="name" class="form-control" value="{{ old('name') }}" id="exampleInputEmail1" placeholder="Enter category name here">
+                      <span class="text-danger">{{ $errors->first('name') }}</span>
+                    </div>
 
-                    
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Select Root Category</label>
+
+                      <select name="parent_id" class="form-control" id="exampleInputEmail1">
+                        <option value="{{ 0 }}">Select Root Category</option>
+                        
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+
+                      </select>
+
+                    </div>
 
                     
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Brand Image</label>
-                        <input type="file" name="image" class="form-control-file" id="exampleFormControlFile1">
+                        <input type="file" name="banner" class="form-control-file" id="exampleFormControlFile1">
+                    </div>
+
+                    <div class="icheck-primary d-inline">
+                      <input type="checkbox" name="is_top_product_category" id="checkboxDanger3">
+                      <label for="checkboxDanger3">
+                        Top Product Category
+                      </label>
                     </div>
                     
                     

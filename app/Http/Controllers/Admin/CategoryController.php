@@ -11,7 +11,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories =  Category::all();
+        $categories =  Category::orderBy('id','desc')->get();
         return view('Backend.category.index',['menu' => 'category', 'categories' => $categories]);
     }   
 
@@ -46,6 +46,7 @@ class CategoryController extends Controller
     public function edit($id)
     {
         $category = category::where(['id' => $id])->first();
+        
         $categories = Category::where(['parent_id' => 0])->get();
 
         if(!empty($category))
@@ -73,7 +74,6 @@ class CategoryController extends Controller
         $data['parent_id']   = $request->parent_id; 
         $data['is_top_product_category']   = $request->is_top_product_category == 'on' ? true : false;
         
-
         $category = Category::where('id', $request->id)->first();
         $category->update($data);
 

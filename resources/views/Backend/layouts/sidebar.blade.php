@@ -93,6 +93,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{ route('product.index') }}" class="nav-link {{ isset($menu) && $menu == 'product' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Products
+              </p>
+            </a>
+          </li>
+
 
         </ul>
       </nav>

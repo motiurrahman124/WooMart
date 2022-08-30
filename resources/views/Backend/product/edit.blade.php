@@ -25,51 +25,104 @@
               <!-- general form elements -->
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Add Category</h3>
+                  <h3 class="card-title">Add Product</h3>
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action="{{ route('category.update', $category->id) }}" method="post" enctype="multipart/form-data">
+                <form role="form" action="{{ route('product.update') }}" method="post" enctype="multipart/form-data">
                     @csrf
                   <div class="card-body">
                     
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Category Name</label>
-                      <input type="text" name="name" class="form-control" value="{{ $category->name }}" id="exampleInputEmail1">
+                      <label for="exampleInputEmail1">Name</label>
+                      <input type="text" name="name" class="form-control" value="{{ $product->name }}" id="exampleInputEmail1" >
                       <span class="text-danger">{{ $errors->first('name') }}</span>
                     </div>
 
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Select Root Category</label>
+                      <label for="exampleInputEmail1">Select Category</label>
 
-                      <select name="parent_id" class="form-control" id="exampleInputEmail1">
-                        <option value="{{ 0 }}">Select Root Category</option>
+                      <select name="category_id" class="form-control" id="exampleInputEmail1"  required>
+                        <option value="{{ null }}">Select Category</option>
                         
-                        @foreach ($categories as $root_category)
-                        <option value="{{ $root_category->id }}" {{  $root_category->id == $category->parent_id ? 'selected' : ''}}>{{ $category->name }}</option>
+                        @foreach ($categories as $category)
+                        <option value="{{ $category->id }}"{{-- {{  $root_category->id == $category->parent_id ? 'selected' : ''}} --}} >{{ $category->name }}</option>
                         @endforeach
 
                       </select>
 
                     </div>
 
-                    
-                    
                     <div class="form-group">
-                        <label for="exampleFormControlFile1">Brand Image</label>
-                        <input type="file" name="banner" class="form-control-file" id="exampleFormControlFile1">
+                      <label for="exampleInputEmail1">Select Brand</label>
+
+                      <select name="brand_id" class="form-control" id="exampleInputEmail1"  required>
+                        <option value="{{ null }}">Select Brand</option>
+                        
+                        @foreach ($brand as $brand)
+                        <option value="{{ $brand->id }}">{{ $brand->title }}</option>
+                        @endforeach
+
+                      </select>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Price</label>
+                      <input type="number" name="price" class="form-control" value="{{ $product->price }}" id="exampleInputEmail1" required>
+                      <span class="text-danger">{{ $errors->first('price') }}</span>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Discount</label>
+                      <input type="number" name="discount" class="form-control" value="{{ $product->discount }}" id="exampleInputEmail1" required>
+                      <span class="text-danger">{{ $errors->first('discount') }}</span>
                     </div>
 
                     <div class="icheck-primary d-inline">
-                      <input type="checkbox" name="is_top_product_category" id="checkboxDanger3" {{$category->is_top_product_category ? 'checked' :''}}>
+                      <input type="checkbox" name="is_percentage_discount" id="checkboxDanger3" {{$product->is_percentage_discount ? 'checked' :''}}>
                       <label for="checkboxDanger3">
-                        Top Product Category
+                        Is percentage discount
                       </label>
                     </div>
 
-                    <input type="hidden" class="form-control" name="id"  id="inputEmail4"  value="{{$category->id}}">
+
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Description</label>
+                      <textarea class="textarea" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $product->description }}</textarea>
+                      </div>
+
+                      
+                    
+                    <div class="form-group">
+                      <label for="exampleFormControlFile1">Primary Image</label>
+                      <input type="file" name="primary_image" class="form-control-file" id="exampleFormControlFile1" required>
+                  </div>
+
+                    <div class="icheck-primary d-inline">
+                      <input type="checkbox" name="is_featured_product" id="is_featured_product" {{$product->is_featured_product ? 'checked' :''}}>
+                      <label for="is_featured_product">
+                        Featured Products
+                      </label>
+                    </div>
+
+                    <div class="icheck-primary d-inline">
+                      <input type="checkbox" name="is_best_selling_product" id="is_best_selling_product" {{$product->is_best_selling_product ? 'checked' :''}}>
+                      <label for="is_best_selling_product">
+                        Best Selling Products
+                      </label>
+                    </div>
+
+                    <div class="icheck-primary d-inline">
+                      <input type="checkbox" name="is_new_arrival_product" id="is_new_arrival_product" {{$product->is_new_arrival_product ? 'checked' :''}}>
+                      <label for="is_new_arrival_product">
+                        New Arrival Products
+                      </label>
+                    </div>
+
                     
                     
+                    <input type="hidden" class="form-control" name="id"  id="inputEmail4"  value="{{$product->slug}}">
     
                   </div>
 

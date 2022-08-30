@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\UserAuthController;
 
@@ -19,6 +20,9 @@ use App\Http\Controllers\UserAuthController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/products/category/{id}', [ProductController::class, 'categoryProducts'])->name('category.products');
+Route::get('/product/{slug}', [ProductController::class, 'details'])->name('product.details');
 
 
 Route::get('/login', [UserAuthController::class, 'signin'])->name('login.form');

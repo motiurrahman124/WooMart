@@ -46,7 +46,7 @@
                         <option value="{{ null }}">Select Category</option>
                         
                         @foreach ($categories as $category)
-                        <option value="{{ $category->id }}"{{-- {{  $root_category->id == $category->parent_id ? 'selected' : ''}} --}} >{{ $category->name }}</option>
+                        <option value="{{ $category->id }}" {{  $category->id == $product->category_id ? 'selected' : ''}} >{{ $category->name }}</option>
                         @endforeach
 
                       </select>
@@ -60,7 +60,7 @@
                         <option value="{{ null }}">Select Brand</option>
                         
                         @foreach ($brand as $brand)
-                        <option value="{{ $brand->id }}">{{ $brand->title }}</option>
+                        <option value="{{ $brand->id }}" {{$brand->id == $product->brand_id ? 'selected' : ''}}>{{ $brand->title }}</option>
                         @endforeach
 
                       </select>
@@ -84,7 +84,6 @@
                         Is percentage discount
                       </label>
                     </div>
-
 
                     <div class="form-group">
                       <label for="exampleFormControlFile1">Description</label>

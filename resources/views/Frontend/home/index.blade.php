@@ -147,47 +147,7 @@
                                         </div>
                                         <div class="product-back">
                                             <figure class="product-thumbnail ">
-                                                <a href="single-shop.html"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
-                                            </figure>
-                                            <div class="product-meta">
-                                                <ul>
-                                                    <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                    <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                </ul>
-                                            </div>
-                                            <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                        </div>
-                                    </div>
-                                </div> 
-                                @endforeach
-                               
-                            </div>
-                        </div>
-                        <div class="featured-list m-b-30">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-sm-6">
-                                    <div class="grid-single-poduct text-center">
-                                        <div class="product-front">
-                                            <figure class="product-thumbnail ">
-                                                <img src="{{asset('assets/Mainpage/images/product/7.png')}}" alt="product"  />
-                                                <span class="off bg-color">-20%</span>
-                                                <span class="new">new</span>
-                                            </figure>
-                                            <div class="product-info bg-white">
-                                                <h2 class="product-title">Man Suit Set</h2>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <h3 class="price">$225.00</h3>
-                                            </div>
-                                        </div>
-                                        <div class="product-back">
-                                            <figure class="product-thumbnail ">
-                                                <a href="single-shop.html"><img src="{{asset('assets/Mainpage/images/product/7.png')}}')}}" alt="product"  /></a>
+                                                <a href="{{route('product.details', $featuredProduct->slug)}}"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
                                             </figure>
                                             <div class="product-meta">
                                                 <ul>
@@ -199,6 +159,55 @@
                                         </div>
                                     </div>
                                 </div>
+                                @if($loop->iteration >= 4)
+                                    @break
+                                @endif
+                                @endforeach                               
+                            </div>
+                        </div>
+                        <div class="featured-list m-b-30">
+                            <div class="row">
+                                @foreach ($products['featured_products'] as $key => $featuredProduct )
+                                @if($key < 3)
+                                    @continue
+                                @endif
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+                                    <div class="grid-single-poduct text-center">
+                                        <div class="product-front">
+                                            <figure class="product-thumbnail ">
+                                                <img src="{{$featuredProduct->primary_image}}" alt="product"  />
+                                                <span class="off bg-color">{{$featuredProduct->is_percentage_discount ? '-'.$featuredProduct->discount.' %' : '-'.$featuredProduct->discount }}</span>
+                                                <span class="new">new</span>
+                                            </figure>
+                                            <div class="product-info bg-white">
+                                                <h2 class="product-title">{{$featuredProduct->name}}</h2>
+                                                {{-- <ul class="product-review">
+                                                    <li> <i class="fas fa-star"></i> </li>
+                                                    <li> <i class="fas fa-star"></i> </li>
+                                                    <li> <i class="fas fa-star"></i> </li>
+                                                    <li> <i class="fas fa-star"></i> </li>
+                                                    <li> <i class="far fa-star"></i> </li>
+                                                </ul> --}}
+                                                <h3 class="price">$ {{$featuredProduct->price}}</h3>
+                                            </div>
+                                        </div>
+                                        <div class="product-back">
+                                            <figure class="product-thumbnail ">
+                                                <a href="single-shop.html"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
+                                            </figure>
+                                            <div class="product-meta">
+                                                <ul>
+                                                    <li><a href="#"><i class="flaticon-heart"></i> </a></li>
+                                                    <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
+                                                </ul>
+                                            </div>
+                                            <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                @endforeach
+                               
                             </div>
                         </div>
                     </div>

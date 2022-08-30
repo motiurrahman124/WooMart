@@ -88,6 +88,9 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/create',[ProductController::class,'create'])->name('product.create');
         Route::post('/store',[ProductController::class,'store'])->name('product.store');
         
+        Route::get('/enable/{slug}',[ProductController::class,'enable'])->name('product.enable');
+        Route::get('/disable/{slug}',[ProductController::class,'disable'])->name('product.disable');
+
         Route::get('/edit/{slug}',[ProductController::class,'edit'])->name('product.edit');
         Route::post('/update',[ProductController::class,'update'])->name('product.update');
        

@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::kpf9CATowkW2aR6W',
+            '_route' => 'generated::7W1hDKLEckCeLtpj',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::G6vPPrV24TWeLTm5',
+            '_route' => 'generated::1oqqp9Ii9iCoYiDv',
           ),
           1 => NULL,
           2 => 
@@ -803,11 +803,57 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/blog/single\\-blog/([^/]++)(*:34)|/admin/(?|b(?|log\\-(?|edit/([^/]++)(*:76)|delete/([^/]++)(*:98))|rand/(?|edit/([^/]++)(*:127)|delete/([^/]++)(*:150)))|slider/(?|edit/([^/]++)(*:183)|delete/([^/]++)(*:206))|category/(?|edit/([^/]++)(*:240)|delete/([^/]++)(*:263))|product/(?|e(?|dit/([^/]++)(*:299)|nable\\-disable/([^/]++)(*:330))|delete/([^/]++)(*:354))))/?$}sDu',
+      0 => '{^(?|/product(?|s/category/([^/]++)(*:37)|/([^/]++)(*:53))|/blog/single\\-blog/([^/]++)(*:88)|/admin/(?|b(?|log\\-(?|edit/([^/]++)(*:130)|delete/([^/]++)(*:153))|rand/(?|edit/([^/]++)(*:183)|delete/([^/]++)(*:206)))|slider/(?|edit/([^/]++)(*:239)|delete/([^/]++)(*:262))|category/(?|edit/([^/]++)(*:296)|delete/([^/]++)(*:319))|product/(?|e(?|nable(?|/([^/]++)(*:360)|\\-disable/([^/]++)(*:386))|dit/([^/]++)(*:407))|d(?|isable/([^/]++)(*:435)|elete/([^/]++)(*:457)))))/?$}sDu',
     ),
     3 => 
     array (
-      34 => 
+      37 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'category.products',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      53 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.details',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      88 => 
       array (
         0 => 
         array (
@@ -830,7 +876,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      76 => 
+      130 => 
       array (
         0 => 
         array (
@@ -853,7 +899,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      98 => 
+      153 => 
       array (
         0 => 
         array (
@@ -876,7 +922,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      127 => 
+      183 => 
       array (
         0 => 
         array (
@@ -899,7 +945,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      150 => 
+      206 => 
       array (
         0 => 
         array (
@@ -922,7 +968,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      183 => 
+      239 => 
       array (
         0 => 
         array (
@@ -945,7 +991,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      206 => 
+      262 => 
       array (
         0 => 
         array (
@@ -968,7 +1014,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      240 => 
+      296 => 
       array (
         0 => 
         array (
@@ -991,7 +1037,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      263 => 
+      319 => 
       array (
         0 => 
         array (
@@ -1014,17 +1060,17 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      299 => 
+      360 => 
       array (
         0 => 
         array (
           0 => 
           array (
-            '_route' => 'product.edit',
+            '_route' => 'product.enable',
           ),
           1 => 
           array (
-            0 => 'id',
+            0 => 'slug',
           ),
           2 => 
           array (
@@ -1037,7 +1083,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      330 => 
+      386 => 
       array (
         0 => 
         array (
@@ -1060,7 +1106,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      354 => 
+      407 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.edit',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      435 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'product.disable',
+          ),
+          1 => 
+          array (
+            0 => 'slug',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      457 => 
       array (
         0 => 
         array (
@@ -1070,7 +1162,7 @@ app('router')->setCompiledRoutes(
           ),
           1 => 
           array (
-            0 => 'id',
+            0 => 'slug',
           ),
           2 => 
           array (
@@ -1098,7 +1190,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::kpf9CATowkW2aR6W' => 
+    'generated::7W1hDKLEckCeLtpj' => 
     array (
       'methods' => 
       array (
@@ -1119,7 +1211,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::kpf9CATowkW2aR6W',
+        'as' => 'generated::7W1hDKLEckCeLtpj',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1244,7 +1336,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::G6vPPrV24TWeLTm5' => 
+    'generated::1oqqp9Ii9iCoYiDv' => 
     array (
       'methods' => 
       array (
@@ -1261,13 +1353,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"0000000022584c6d000000001fcc4f62";}";s:4:"hash";s:44:"/GYT7TY0cteGDqFxHSKfg4NqADA70dtx/GBE9XwoxL8=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000154670f8000000005fa8d45a";}";s:4:"hash";s:44:"gDjorHf807jkePLWrpnA63uHOKnIl7khP4eDn68aoDw=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::G6vPPrV24TWeLTm5',
+        'as' => 'generated::1oqqp9Ii9iCoYiDv',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1305,6 +1397,80 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'home',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'category.products' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'products/category/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductController@categoryProducts',
+        'controller' => 'App\\Http\\Controllers\\ProductController@categoryProducts',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'category.products',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'product.details' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'product/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductController@details',
+        'controller' => 'App\\Http\\Controllers\\ProductController@details',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'product.details',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2870,6 +3036,80 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'product.enable' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/product/enable/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ProductController@enable',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ProductController@enable',
+        'namespace' => NULL,
+        'prefix' => 'admin/product',
+        'where' => 
+        array (
+        ),
+        'as' => 'product.enable',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'product.disable' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'admin/product/disable/{slug}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\Admin\\ProductController@disable',
+        'controller' => 'App\\Http\\Controllers\\Admin\\ProductController@disable',
+        'namespace' => NULL,
+        'prefix' => 'admin/product',
+        'where' => 
+        array (
+        ),
+        'as' => 'product.disable',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'product.edit' => 
     array (
       'methods' => 
@@ -2877,7 +3117,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/product/edit/{id}',
+      'uri' => 'admin/product/edit/{slug}',
       'action' => 
       array (
         'middleware' => 
@@ -2950,7 +3190,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/product/delete/{id}',
+      'uri' => 'admin/product/delete/{slug}',
       'action' => 
       array (
         'middleware' => 

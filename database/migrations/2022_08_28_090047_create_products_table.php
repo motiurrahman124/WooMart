@@ -26,7 +26,7 @@ return new class extends Migration
             $table->float('discount_price')->default(0);
             $table->float('rating')->default(0);
             $table->integer('rating_number')->default(0);
-
+            $table->text('about_product')->nullable();
             $table->longText('description')->nullable();
             $table->integer('quantity')->default(0);
             $table->string('primary_image')->nullable();

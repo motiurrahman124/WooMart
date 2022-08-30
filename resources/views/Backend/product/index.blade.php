@@ -46,6 +46,7 @@
                     <th>Brand</th>
                     <th>Price</th>
                     <th>Discount Price</th>
+                    <th>Active status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -61,6 +62,15 @@
                     <td>{{ $product->price}}</td>
                     <td>{{ $product->discount_price}}</td>
                     <td>
+                      @if($product->enable)
+                      <a type="button" name="delete" href="{{route('product.disable',$product->slug)}}" class="btn btn-danger btn-sm">Disable</a>
+                      @else
+                      <a type="button" name="edit" href="{{route('product.enable',$product->slug)}}" class="btn btn-primary btn-sm">Enable</a>
+                      @endif
+                    </td>
+                    <td>
+                      {{-- <a type="button" name="edit" href="{{route('product.edit',$product->slug)}}" class="btn btn-primary btn-sm"><i class="fa-solid fa-lock-open"></i></a>
+                      <a type="button" name="edit" href="{{route('product.edit',$product->slug)}}" class="btn btn-primary btn-sm"><i class="fa-solid fa-lock"></i></a> --}}
                       <a type="button" name="edit" href="{{route('product.edit',$product->slug)}}" class="btn btn-primary btn-sm"><i class="fas fa-edit"></i></a>
                       <a type="button" name="delete" href="{{route('product.delete',$product->id)}}" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i></a>
                       

@@ -17,6 +17,18 @@ class ProductController extends Controller
         return view('Backend.product.index',['menu' => 'product', 'products' => $products]);
     }   
 
+    public function enable($slug)
+    {
+        Product::where(['slug' => $slug])->update(['enable' => ENABLE]);
+        return redirect()->back();
+    }
+
+    public function disable($slug)
+    {
+        Product::where(['slug' => $slug])->update(['enable' => DISABLE]);
+        return redirect()->back();
+    }
+
 
     
     public function create()
@@ -37,7 +49,7 @@ class ProductController extends Controller
 
         $data = [
             'name' => $request->name,
-            'slug'  => Str::slug($request->name, '-'),
+            'slug'  => time().'-'.Str::slug($request->name, '-'),
             'category_id' => $request->category_id,
             'brand_id' => $request->brand_id,
             'price' => $request->price,
@@ -48,6 +60,7 @@ class ProductController extends Controller
             'is_new_arrival_product' => $request->is_new_arrival_product == 'on' ? ENABLE : DISABLE,
             'description' => $request->description,
         ];
+
        if(!empty($request->primary_image)) {
             $data['primary_image'] = fileUploade($request->primary_image, PROFILE_PRODUCT_PATH );
        }
@@ -80,7 +93,6 @@ class ProductController extends Controller
     public function update(Request $request)
     {
        
-        dd($request->all());
         $request->validate([
             'name' => 'required'
         ]);
@@ -96,13 +108,13 @@ class ProductController extends Controller
         $data['discount']   = $request->discount; 
         $data['category_id']   = $request->category_id; 
         $data['brand_id']   = $request->brand_id; 
-        $data['description']   = $request->brand_id; 
+        $data['description']   = $request->description; 
         $data['is_percentage_discount']   = $request->is_percentage_discount == 'on' ? true : false;
         $data['is_featured_product']      = $request->is_featured_product == 'on' ? true : false;
         $data['is_best_selling_product']  = $request->is_best_selling_product == 'on' ? true : false;
         $data['is_new_arrival_product']   = $request->is_new_arrival_product == 'on' ? true : false;
         
-        $product = product::where('id', $request->id)->first();
+        $product = Product::where('slug', $request->id)->first();
         $product->update($data);
 
         return redirect ()->route('product.index');

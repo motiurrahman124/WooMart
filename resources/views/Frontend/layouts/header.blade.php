@@ -125,11 +125,11 @@
                         <ul class="catagory-items">
                             @foreach ($categories  as $category )
                                 <li class="has-catagory-submenu">
-                                    <a href="#"><img src="{{asset('assets/Mainpage/images/icons/c1.svg')}}" alt="icon" /> {{$category->name}} @if(isset($category->child[0])) <i class="fas fa-angle-right float-right"></i> @endif </a>
+                                    <a href="{{route('category.products', $category->id)}}"><img src="{{asset('assets/Mainpage/images/icons/c1.svg')}}" alt="icon" /> {{$category->name}} @if(isset($category->child[0])) <i class="fas fa-angle-right float-right"></i> @endif </a>
                                     @if(isset($category->child[0]))
                                         <ul class="catagory-submenu-lsit">
                                             @foreach ($category->child as $subcategory )
-                                                <li><a class="catagory-title" href="#">{{$subcategory->name}}</a></li>
+                                                <li><a class="catagory-title" href="{{route('category.products', $subcategory->id)}}">{{$subcategory->name}}</a></li>
                                             @endforeach
                                         </ul>
                                     @endif

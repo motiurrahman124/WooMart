@@ -60,17 +60,18 @@ class ProductController extends Controller
         return redirect()->route('product.index');
     }
 
-    public function edit($slug)
+    public function edit($slug, )
     {
         $product = Product::where(['slug' => $slug])->first();
 
-        dd($product);
         
-        $products = product::where(['parent_id' => 0])->get();
+        $categories = category::orderBy('name', 'asc')->get();
+        
+        $brand = Brand::orderBy('title', 'asc')->get();
 
         if(!empty($product))
         {
-            return view('Backend.product.edit',['product' =>$product, 'menu' => 'product', 'categories' =>$products]);
+            return view('Backend.product.edit',['product' =>$product, 'menu' => 'product', 'categories' =>$categories, 'brand' => $brand]);
         }
         return redirect()->back();
     }
@@ -79,19 +80,27 @@ class ProductController extends Controller
     public function update(Request $request)
     {
        
+        dd($request->all());
         $request->validate([
             'name' => 'required'
         ]);
        
-        if($request->banner)
+        if($request->primary_image)
         {
-            $data['banner']   = fileUploade($request->banner,IMAGE_product_PATH); 
+            $data['primary_image']   = fileUploade($request->primary_image,PROFILE_PRODUCT_PATH); 
         }
 
        
         $data['name']   = $request->name;
-        $data['parent_id']   = $request->parent_id; 
-        $data['is_top_product_product']   = $request->is_top_product_product == 'on' ? true : false;
+        $data['price']   = $request->price; 
+        $data['discount']   = $request->discount; 
+        $data['category_id']   = $request->category_id; 
+        $data['brand_id']   = $request->brand_id; 
+        $data['description']   = $request->brand_id; 
+        $data['is_percentage_discount']   = $request->is_percentage_discount == 'on' ? true : false;
+        $data['is_featured_product']      = $request->is_featured_product == 'on' ? true : false;
+        $data['is_best_selling_product']  = $request->is_best_selling_product == 'on' ? true : false;
+        $data['is_new_arrival_product']   = $request->is_new_arrival_product == 'on' ? true : false;
         
         $product = product::where('id', $request->id)->first();
         $product->update($data);

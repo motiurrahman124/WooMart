@@ -91,7 +91,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::get('/edit/{slug}',[ProductController::class,'edit'])->name('product.edit');
         Route::post('/update',[ProductController::class,'update'])->name('product.update');
        
-        Route::get('/delete/{id}',[ProductController::class,'delete'])->name('product.delete');
+        Route::get('/delete/{slug}',[ProductController::class,'delete'])->name('product.delete');
         Route::get('/enable-disable/{id}',[ProductController::class,'enableDisable'])->name('product.enableDisable');
 
     });

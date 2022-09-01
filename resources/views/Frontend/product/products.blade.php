@@ -48,16 +48,18 @@
                 <div class="tab-content" id="listgridtabcontent">
                     <!-- list view item start here  -->
                     <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                        
+                        @foreach ($products as $product)
                         <div class="list-single-poduct d-flex  align-items-center justify-content-between">
                             <div class="product-thumbanial">
-                                <span class="off">-20%</span>
+                                <span class="off"><b>-{{ $product->discount }}%</b></span>
                                 <a href="single-shop.html">
-                                    <img src="images/product/10.png" alt="product" />
+                                    <img src={{ asset($product->primary_image) }} alt="product" />
                                 </a>
                             </div>
                             <div class="product-info d-flex align-items-center justify-content-between">
                                 <div class="product-left">
-                                    <h3><a href="single-shop.html">Man Suit Set</a></h3>
+                                    <h3><a href="single-shop.html">{{ $product->name }}</a></h3>
                                     <ul class="review-list">
                                         <li><i class="fas fa-star"></i></li>
                                         <li><i class="fas fa-star"></i></li>
@@ -65,10 +67,10 @@
                                         <li><i class="fas fa-star"></i></li>
                                         <li><i class="far fa-star"></i></li>
                                     </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae senectus at sed nullam massa vestibulum congue. </p>
+                                    <p>{{ substr($product->about_product,0,100) }} </p>
                                 </div>
                                 <div class="product-right text-md-right">
-                                    <h2 class="price">$225.00</h2>
+                                    <h2 class="price">${{ $product->price }}</h2>
                                     <div class="fevatir-icon">
                                         <a href="#"><i class="flaticon-heart"></i></a>
                                     </div>
@@ -76,141 +78,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="list-single-poduct d-flex  align-items-center justify-content-between">
-                            <div class="product-thumbanial">
-                                <a href="single-shop.html">
-                                    <img src="images/product/11.png" alt="product" />
-                                </a>
-                            </div>
-                            <div class="product-info d-flex align-items-center justify-content-between">
-                                <div class="product-left">
-                                    <h3><a href="single-shop.html">Man Suit Set</a></h3>
-                                    <ul class="review-list">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="far fa-star"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae senectus at sed nullam massa vestibulum congue. </p>
-                                </div>
-                                <div class="product-right text-md-right">
-                                    <h2 class="price">$225.00</h2>
-                                    <div class="fevatir-icon">
-                                        <a href="#"><i class="flaticon-heart"></i></a>
-                                    </div>
-                                    <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-single-poduct d-flex  align-items-center justify-content-between">
-                            <div class="product-thumbanial">
-                                <a href="single-shop.html">
-                                    <img src="images/product/2.png" alt="product" />
-                                </a>
-                            </div>
-                            <div class="product-info d-flex align-items-center justify-content-between">
-                                <div class="product-left">
-                                    <h3><a href="single-shop.html">Man Suit Set</a></h3>
-                                    <ul class="review-list">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="far fa-star"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae senectus at sed nullam massa vestibulum congue. </p>
-                                </div>
-                                <div class="product-right text-md-right">
-                                    <h2 class="price">$225.00</h2>
-                                    <div class="fevatir-icon">
-                                        <a href="#"><i class="flaticon-heart"></i></a>
-                                    </div>
-                                    <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-single-poduct d-flex  align-items-center justify-content-between">
-                            <div class="product-thumbanial">
-                                <a href="single-shop.html">
-                                    <img src="images/product/3.png" alt="product" />
-                                </a>
-                            </div>
-                            <div class="product-info d-flex align-items-center justify-content-between">
-                                <div class="product-left">
-                                    <h3><a href="single-shop.html">Man Suit Set</a></h3>
-                                    <ul class="review-list">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="far fa-star"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae senectus at sed nullam massa vestibulum congue. </p>
-                                </div>
-                                <div class="product-right text-md-right">
-                                    <h2 class="price">$225.00</h2>
-                                    <div class="fevatir-icon">
-                                        <a href="#"><i class="flaticon-heart"></i></a>
-                                    </div>
-                                    <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-single-poduct d-flex  align-items-center justify-content-between">
-                            <div class="product-thumbanial">
-                                <a href="single-shop.html">
-                                    <img src="images/product/4.png" alt="product" />
-                                </a>
-                            </div>
-                            <div class="product-info d-flex align-items-center justify-content-between">
-                                <div class="product-left">
-                                    <h3><a href="single-shop.html">Man Suit Set</a></h3>
-                                    <ul class="review-list">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="far fa-star"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae senectus at sed nullam massa vestibulum congue. </p>
-                                </div>
-                                <div class="product-right text-md-right">
-                                    <h2 class="price">$225.00</h2>
-                                    <div class="fevatir-icon">
-                                        <a href="#"><i class="flaticon-heart"></i></a>
-                                    </div>
-                                    <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-single-poduct d-flex  align-items-center justify-content-between">
-                            <div class="product-thumbanial">
-                                <a href="single-shop.html">
-                                    <img src="images/product/5.png" alt="product" />
-                                </a>
-                            </div>
-                            <div class="product-info d-flex align-items-center justify-content-between">
-                                <div class="product-left">
-                                    <h3><a href="single-shop.html">Man Suit Set</a></h3>
-                                    <ul class="review-list">
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="fas fa-star"></i></li>
-                                        <li><i class="far fa-star"></i></li>
-                                    </ul>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae senectus at sed nullam massa vestibulum congue. </p>
-                                </div>
-                                <div class="product-right text-md-right">
-                                    <h2 class="price">$225.00</h2>
-                                    <div class="fevatir-icon">
-                                        <a href="#"><i class="flaticon-heart"></i></a>
-                                    </div>
-                                    <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
+                        
+                        
                     </div>
                     <!-- list view item end here  -->
                     <!-- grid view item start here  -->

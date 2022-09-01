@@ -53,7 +53,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::post('/update',[SliderController::class,'update'])->name('slider.update');
        
         Route::get('/delete/{id}',[SliderController::class,'delete'])->name('slider.delete');
-
+        
     });
 
     Route::group(['prefix' => 'brand'], function () {

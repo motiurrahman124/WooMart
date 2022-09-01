@@ -10,8 +10,9 @@ class ProductController extends Controller
     public function details($slug)
     {
         $product = Product::where(['slug' => $slug])->first();
+        $productList = Product::where(['slug' => $slug])->first();
         if(!empty($product)) {
-            return view('Frontend.product.single-product',['product' => $product]);
+            return view('Frontend.product.single-product',['product' => $product,'productList' => $productList]);
         }
 
         return redirect()->back();

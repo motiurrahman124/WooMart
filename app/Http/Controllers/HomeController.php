@@ -33,5 +33,10 @@ class HomeController extends Controller
         $data['recent_blogs'] = Blog::orderBy('id','desc')->with('author')->get();
         return view('Frontend.home.blog',['data'=>$data]);
     }
+
+    public function contact()
+    {
+        return view('Frontend.home.contact');
+    }
     
 }

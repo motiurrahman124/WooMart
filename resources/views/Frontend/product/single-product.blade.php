@@ -324,6 +324,8 @@
                     <div class="offer-product-slide">
                         <div class="grid-view-list m-b-30">
                             <div class="row">
+
+                                @foreach ($productList as $productList)
                                 <div class="col-lg-6 col-md-6">
                                     <div class="product-listview">
                                         <div class="media">
@@ -356,102 +358,8 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list2.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Baby Suit</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list3.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Dimond Necklese</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list4.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Man Suit Set</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                @endforeach
+                                
                             </div>
                         </div>
                         <div class="grid-view-list m-b-30">

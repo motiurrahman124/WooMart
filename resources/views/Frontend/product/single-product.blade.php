@@ -325,30 +325,29 @@
                         <div class="grid-view-list m-b-30">
                             <div class="row">
 
-                                @foreach ($productList as $productList)
+                                @foreach ($productList as $single_product)
                                 <div class="col-lg-6 col-md-6">
                                     <div class="product-listview">
                                         <div class="media">
                                             <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
                                                 <a href="single-shop.html">
-                                                    <img src="images/product/list1.png" alt="list product" />
+                                                    <img src="{{$single_product->primary_image}}" alt="list product" />
                                                 </a>
                                             </div>
                                             <div class="media-body">
                                                 <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Fashion Girl Top</a>
+                                                  <a href="single-shop.html">{{$single_product->name}}</a>
                                                 </h3>
-                                                <ul class="product-review">
+                                                {{-- <ul class="product-review">
                                                     <li> <i class="fas fa-star"></i> </li>
                                                     <li> <i class="fas fa-star"></i> </li>
                                                     <li> <i class="fas fa-star"></i> </li>
                                                     <li> <i class="fas fa-star"></i> </li>
                                                     <li> <i class="far fa-star"></i> </li>
-                                                </ul>
+                                                </ul> --}}
                                                 <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
+                                                    <span class="price">$ {{$single_product->discount_price}}</span>
+                                                    <span class="old-price">${{$single_product->price}}</span>
                                                 </div>
                                                 <a class="add-cart" href="#"> 
                                                     <i class="flaticon-shopping-cart-empty-side-view"></i> 
@@ -360,138 +359,6 @@
                                 </div>
                                 @endforeach
                                 
-                            </div>
-                        </div>
-                        <div class="grid-view-list m-b-30">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list1.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Fashion Girl Top</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list2.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Baby Suit</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list3.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Dimond Necklese</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <div class="product-listview">
-                                        <div class="media">
-                                            <div class="product-thumbnail mr-5">
-                                                <span class="sale">Sale</span>
-                                                <a href="single-shop.html">
-                                                    <img src="images/product/list4.png" alt="list product" />
-                                                </a>
-                                            </div>
-                                            <div class="media-body">
-                                                <h3 class="product-title mt-0">
-                                                  <a href="single-shop.html">Man Suit Set</a>
-                                                </h3>
-                                                <ul class="product-review">
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="fas fa-star"></i> </li>
-                                                    <li> <i class="far fa-star"></i> </li>
-                                                </ul>
-                                                <div class="price-list">
-                                                    <span class="price">$225.00</span>
-                                                    <span class="old-price">$225.00</span>
-                                                </div>
-                                                <a class="add-cart" href="#"> 
-                                                    <i class="flaticon-shopping-cart-empty-side-view"></i> 
-                                                    Add to Cart
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -506,99 +373,21 @@
                         <div class="widget-wrap catagory-widget">
                             <h4>Categories</h4>
                             <ul>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Top Wear</a></li>
+                                @foreach ($categories as $category )
+                                <li><a href="{{url('shop?category_id='.$category->id)}}">{{$category->name}}</a></li>
+                                @endforeach
                             </ul>
-                        </div>
-                        <div class="widget-wrap price-widget">
-                            <h4>Price</h4>
-                            <div>
-                                <input type="text" id="amount" readonly />
-                            </div>
-                            <div id="slider-range"></div>
                         </div>
                         <div class="widget-wrap Brand-widget">
                             <h4>Brand</h4>
-                            <div class="check-box-inner">
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test1">
-                                    <label for="test1"> Blue Moon</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test2">
-                                    <label for="test2"> Eastecy</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test3">
-                                    <label for="test3"> Kalvin Clein</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test4">
-                                    <label for="test4"> Armaani</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test5">
-                                    <label for="test5"> Nike</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test6">
-                                    <label for="test6"> Polo</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget-wrap review-widget">
-                            <h4>Average Reviews</h4>
                             <ul>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
+                                @foreach ($brands as $brand )
+                                <li><a href="{{url('shop?brand_id='.$brand->id)}}">{{$brand->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
-                    <div class="single-widget add-banner-widget ">
-                        <div class="widget-title text-center">
-                            <h3>Girls Collections</h3>
-                        </div>
-                        <figure class="add-image">
-                            <img src="images/product/14.png" alt="show" />
-                        </figure>
-                    </div>
-                    <div class="single-widget ">
-                        <a href="#">
-                            <img src="images/banner-add.png" alt="banner add" />
-                        </a>
-                    </div>
+                  
                 </div>
             </div>
         </div>

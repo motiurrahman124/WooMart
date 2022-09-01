@@ -22,8 +22,9 @@ use App\Http\Controllers\UserAuthController;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 
-Route::get('/products/category/{id}', [ProductController::class, 'categoryProducts'])->name('category.products');
 Route::get('/product/{slug}', [ProductController::class, 'details'])->name('product.details');
+
+Route::get('/shop', [ProductController::class, 'products'])->name('products');
 
 
 Route::get('/login', [UserAuthController::class, 'signin'])->name('login.form');

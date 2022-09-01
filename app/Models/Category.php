@@ -26,4 +26,9 @@ class Category extends Model
     {
         return asset($banner);
     }
+
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::UWwLxI0Bt1eOUX0h',
+            '_route' => 'generated::Kyq2IW5Q4S0MPt5t',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::wFKAP9za5pTB3Lhj',
+            '_route' => 'generated::OPS7zcJ8ZK30uQni',
           ),
           1 => NULL,
           2 => 
@@ -143,6 +143,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'contact',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/shop' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'products',
           ),
           1 => NULL,
           2 => 
@@ -1210,7 +1230,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::UWwLxI0Bt1eOUX0h' => 
+    'generated::Kyq2IW5Q4S0MPt5t' => 
     array (
       'methods' => 
       array (
@@ -1231,7 +1251,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::UWwLxI0Bt1eOUX0h',
+        'as' => 'generated::Kyq2IW5Q4S0MPt5t',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1356,7 +1376,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::wFKAP9za5pTB3Lhj' => 
+    'generated::OPS7zcJ8ZK30uQni' => 
     array (
       'methods' => 
       array (
@@ -1371,15 +1391,15 @@ app('router')->setCompiledRoutes(
           0 => 'api',
           1 => 'auth:sanctum',
         ),
-        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
+        'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:297:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:79:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004870000000000000000";}";s:4:"hash";s:44:"aZis2YkFVa+CXxfaZ6mPiXv1sX2ja+rBbi4POz/+hoo=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"000000004d28d84e000000005801c6b5";}";s:4:"hash";s:44:"naeEwQpgTfQomxKegartL5GeIFKhDESvyX7+4gR8u/8=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::wFKAP9za5pTB3Lhj',
+        'as' => 'generated::OPS7zcJ8ZK30uQni',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1528,6 +1548,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'product.details',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'products' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'shop',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\ProductController@products',
+        'controller' => 'App\\Http\\Controllers\\ProductController@products',
+        'namespace' => NULL,
+        'prefix' => '',
+        'where' => 
+        array (
+        ),
+        'as' => 'products',
       ),
       'fallback' => false,
       'defaults' => 

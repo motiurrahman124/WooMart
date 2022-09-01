@@ -14,4 +14,9 @@ class Brand extends Model
     {
         return asset($brand_image);
     }
+
+    public function product()
+    {
+        return $this->hasMany(Product::class);
+    }
 }

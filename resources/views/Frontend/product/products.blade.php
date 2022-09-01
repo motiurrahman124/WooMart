@@ -53,8 +53,8 @@
                         <div class="list-single-poduct d-flex  align-items-center justify-content-between">
                             <div class="product-thumbanial">
                                 <span class="off"><b>-{{ $product->discount }}%</b></span>
-                                <a href="single-shop.html">
-                                    <img src={{ asset($product->primary_image) }} alt="product" />
+                                <a href="{{route('product.details', $product->slug)}}">
+                                    <img src={{ $product->primary_image }} alt="product" />
                                 </a>
                             </div>
                             <div class="product-info d-flex align-items-center justify-content-between">
@@ -88,31 +88,33 @@
                         <div class="section-wrap">
                             <div class="featured-list m-b-30">
                                 <div class="row">
+                                    @foreach ($products as $product)
+                                        
                                     <div class="col-lg-4 col-md-6">
                                         <div class="grid-single-poduct text-center">
                                             <div class="product-front">
                                                 <figure class="product-thumbnail">
-                                                    <img src="images/product/7.png" alt="product"  />
+                                                    <img src="{{$product->primary_image}}" alt="product"  />
                                                     <span class="off">-20%</span>
                                                     <span class="new">new</span>
                                                     <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
                                                 </figure>
                                                 <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
+                                                    <h2 class="product-title">{{$product->name}}</h2>
+                                                    {{-- <ul class="product-review">
                                                         <li> <i class="fas fa-star"></i> </li>
                                                         <li> <i class="fas fa-star"></i> </li>
                                                         <li> <i class="fas fa-star"></i> </li>
                                                         <li> <i class="fas fa-star"></i> </li>
                                                         <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
+                                                    </ul> --}}
+                                                    <p class="product-content">{{substr($product->about_product,0,100) }}</p>
+                                                    <h3 class="price">${{$product->discount_price}}</h3>
                                                 </div>
                                             </div>
                                             <div class="product-back">
                                                 <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
+                                                    <a href="{{route('product.details',$product->slug)}}"><img src="{{$product->primary_image}}" alt="product"  /></a>
                                                 </figure>
                                                 <div class="product-meta">
                                                     <ul>
@@ -124,294 +126,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/2.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/12.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/13.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/14.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/17.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/15.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/16.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-6">
-                                        <div class="grid-single-poduct text-center">
-                                            <div class="product-front">
-                                                <figure class="product-thumbnail">
-                                                    <img src="images/product/4.png" alt="product"  />
-                                                    <span class="off">-20%</span>
-                                                    <span class="new">new</span>
-                                                    <a class="heart" href="#"><i class="flaticon-heart"></i> </a>
-                                                </figure>
-                                                <div class="product-info">
-                                                    <h2 class="product-title">Man Suit Set</h2>
-                                                    <ul class="product-review">
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="fas fa-star"></i> </li>
-                                                        <li> <i class="far fa-star"></i> </li>
-                                                    </ul>
-                                                    <p class="product-content">Nunc, gravida venenatis mattis neque volutpat</p>
-                                                    <h3 class="price">$225.00</h3>
-                                                </div>
-                                            </div>
-                                            <div class="product-back">
-                                                <figure class="product-thumbnail">
-                                                    <a href="single-shop.html"><img src="images/product/man.png" alt="product"  /></a>
-                                                </figure>
-                                                <div class="product-meta">
-                                                    <ul>
-                                                        <li><a href="#"><i class="flaticon-heart"></i> </a></li>
-                                                        <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
-                                                    </ul>
-                                                </div>
-                                                <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -459,165 +174,21 @@
                         <div class="widget-wrap catagory-widget">
                             <h4>Categories</h4>
                             <ul>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Men’s Clothing</a></li>
-                                <li><a href="#">Women’s Clothing</a></li>
-                                <li><a href="#">Top Wear</a></li>
+                                @foreach ($categories as $category )
+                                <li><a href="{{url('shop?category_id='.$category->id)}}">{{$category->name}}</a></li>
+                                @endforeach
                             </ul>
-                        </div>
-                        <div class="widget-wrap price-widget">
-                            <h4>Price</h4>
-                            <div>
-                                <input type="text" id="amount" readonly />
-                            </div>
-                            <div id="slider-range"></div>
                         </div>
                         <div class="widget-wrap Brand-widget">
                             <h4>Brand</h4>
-                            <div class="check-box-inner">
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test1">
-                                    <label for="test1"> Blue Moon</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test2">
-                                    <label for="test2"> Eastecy</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test3">
-                                    <label for="test3"> Kalvin Clein</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test4">
-                                    <label for="test4"> Armaani</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test5">
-                                    <label for="test5"> Nike</label>
-                                </div>
-                                <div class="filter-check-box">
-                                    <input type="checkbox" id="test6">
-                                    <label for="test6"> Polo</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="widget-wrap review-widget">
-                            <h4>Average Reviews</h4>
                             <ul>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
-                                <li>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="fas fa-star"></span>
-                                    <span class="far fa-star"></span>
-                                    <span class="up">& Up</span>
-                                </li>
+                                @foreach ($brands as $brand )
+                                <li><a href="{{url('shop?brand_id='.$brand->id)}}">{{$brand->title}}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
-                    <div class="single-widget best-sell-widget">
-                        <div class="widget-title text-center">
-                            <h3>Best Sell</h3>
-                        </div>
-                       <div class="widget-wrap product-list">
-                           <div class="bestsell-product">
-                                <div class="media">
-                                    <a href="#" class="product-img mr-3">
-                                        <img src="images/product/bs1.png" alt="img">
-                                    </a>
-                                    <div class="media-body ">
-                                        <h3 class="product-title mt-0"><a href="#">Baby Shoe</a></h3>
-                                        <ul class="product-review">
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="far fa-star"></i> </li>
-                                        </ul>
-                                        <span class="price">$120</span>
-                                    </div>
-                                </div>
-                           </div>
-                           <div class="bestsell-product">
-                                <div class="media">
-                                    <a href="#" class="product-img mr-3">
-                                        <img src="images/product/bs2.png" alt="img">
-                                    </a>
-                                    <div class="media-body ">
-                                        <h3 class="product-title mt-0"><a href="#">Sunglass</a></h3>
-                                        <ul class="product-review">
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="far fa-star"></i> </li>
-                                        </ul>
-                                        <span class="price">$120</span>
-                                    </div>
-                                </div>
-                           </div>
-                           <div class="bestsell-product">
-                                <div class="media">
-                                    <a href="#" class="product-img mr-3">
-                                        <img src="images/product/bs3.png" alt="img">
-                                    </a>
-                                    <div class="media-body ">
-                                        <h3 class="product-title mt-0"><a href="#">Man T-shirt</a></h3>
-                                        <ul class="product-review">
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="far fa-star"></i> </li>
-                                        </ul>
-                                        <span class="price">$120</span>
-                                    </div>
-                                </div>
-                           </div>
-                           <div class="bestsell-product">
-                                <div class="media">
-                                    <a href="#" class="product-img mr-3">
-                                        <img src="images/product/bs4.png" alt="img">
-                                    </a>
-                                    <div class="media-body ">
-                                        <h3 class="product-title mt-0"><a href="#">Girl Top</a></h3>
-                                        <ul class="product-review">
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="fas fa-star"></i> </li>
-                                            <li> <i class="far fa-star"></i> </li>
-                                        </ul>
-                                        <span class="price">$120</span>
-                                    </div>
-                                </div>
-                           </div>
-                       </div>
-                   </div>
+                  
                 </div>
             </div>
         </div>  

@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="top-section">
-                        <h2 class="section-title">Our Brands</h2>
+                        <h2 class="section-title">Our Brands New</h2>
                     </div>
                 </div>
             </div>

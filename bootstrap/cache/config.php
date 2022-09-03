@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:RVpwJtUUTPjD/kwcifnV1zET++TyUmql5ZGGT+olTto=',
+    'key' => 'base64:c5q2y0GyL8Cy45bP7mDXeeWARkW3HNl5IBPFLxSVexk=',
     'cipher' => 'AES-256-CBC',
     'maintenance' => 
     array (
@@ -197,7 +197,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\framework/cache/data',
+        'path' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -280,7 +280,7 @@
       array (
         'driver' => 'sqlite',
         'url' => NULL,
-        'database' => 'woomart',
+        'database' => 'woomartt',
         'prefix' => '',
         'foreign_key_constraints' => true,
       ),
@@ -290,7 +290,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'woomart',
+        'database' => 'woomartt',
         'username' => 'root',
         'password' => '',
         'unix_socket' => '',
@@ -310,7 +310,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'woomart',
+        'database' => 'woomartt',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -325,7 +325,7 @@
         'url' => NULL,
         'host' => '127.0.0.1',
         'port' => '3306',
-        'database' => 'woomart',
+        'database' => 'woomartt',
         'username' => 'root',
         'password' => '',
         'charset' => 'utf8',
@@ -370,13 +370,13 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\app',
+        'root' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\app',
         'throw' => false,
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\app/public',
+        'root' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
         'throw' => false,
@@ -396,7 +396,7 @@
     ),
     'links' => 
     array (
-      'E:\\Appstick\\Laravel Batch\\WooMart\\public\\storage' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\app/public',
+      'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\public\\storage' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -435,13 +435,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\logs/laravel.log',
+        'path' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\logs/laravel.log',
+        'path' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -493,7 +493,7 @@
       ),
       'emergency' => 
       array (
-        'path' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\logs/laravel.log',
+        'path' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -559,7 +559,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'E:\\Appstick\\Laravel Batch\\WooMart\\resources\\views/vendor/mail',
+        0 => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -665,7 +665,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\framework/sessions',
+    'files' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -685,9 +685,9 @@
   array (
     'paths' => 
     array (
-      0 => 'E:\\Appstick\\Laravel Batch\\WooMart\\resources\\views',
+      0 => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\resources\\views',
     ),
-    'compiled' => 'E:\\Appstick\\Laravel Batch\\WooMart\\storage\\framework\\views',
+    'compiled' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart\\storage\\framework\\views',
   ),
   'sweetalert' => 
   array (
@@ -804,8 +804,8 @@
     'ignored_solution_providers' => 
     array (
     ),
-    'enable_runnable_solutions' => true,
-    'remote_sites_path' => 'E:\\Appstick\\Laravel Batch\\WooMart',
+    'enable_runnable_solutions' => NULL,
+    'remote_sites_path' => 'E:\\App Stick\\Project\\WooMart-master\\WooMart-master\\WooMart',
     'local_sites_path' => '',
     'housekeeping_endpoint_prefix' => '_ignition',
     'settings_file_path' => '',

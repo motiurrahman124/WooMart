@@ -7,3 +7,5 @@ const IMAGE_CATEGORY_PATH = 'images/categories/';
 
 const ENABLE = 1;
 const DISABLE = 0;
+const READ = 1;
+const UNREAD = 0;

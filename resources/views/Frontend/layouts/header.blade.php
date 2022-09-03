@@ -108,7 +108,7 @@
                     <div class="categories-list-v2 ">
                         <h3 class="catagory-name"><i class="fas fa-bars"></i> All Categories </h3>
                         <ul class="catagory-items">
-                            @foreach ($categories  as $category )
+                            @foreach ($categoriess  as $category )
                                 <li class="has-catagory-submenu">
                                     <a href="{{url('shop?category_id='.$category->id)}}"><img src="{{asset('assets/Mainpage/images/icons/c1.svg')}}" alt="icon" /> {{$category->name}} @if(isset($category->child[0])) <i class="fas fa-angle-right float-right"></i> @endif </a>
                                     @if(isset($category->child[0]))
@@ -282,10 +282,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="blog.html">Blog </a>
+                                <a href="{{ route('blog') }}">Blog </a>
                             </li>
                             <li>
-                                <a href="contact.html">Contact </a>
+                                <a href="{{ route('contact') }}">Contact </a>
                             </li>
                         </ul>
                     </nav>

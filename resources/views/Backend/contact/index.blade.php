@@ -44,7 +44,7 @@
                     <th>Phone</th>
                     <th>Email</th>
                     <th>Message</th>
-                    <th>Read status</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,11 +57,12 @@
                     <td>{{ $contact->email }}</td>
                     <td>{{ $contact->message }}</td>
                     <td>
-                      {{-- @if($contact->read_unread)
-                      <a type="button" name="delete" href="{{route('product.disable',$product->slug)}}" class="btn btn-danger btn-sm">Disable</a>
+                      @if($contact->read_unread)
+                      <button class="btn btn-primary btn-sm" disabled>Read</button>
+                      {{-- <a type="button" name="read" href="{{route('contact.unread',$contact->id)}}" class="btn btn-warning btn-sm" disable>Read</a> --}}
                       @else
-                      <a type="button" name="edit" href="{{route('product.enable',$product->slug)}}" class="btn btn-primary btn-sm">Enable</a>
-                      @endif --}}
+                      <a type="button" name="unread" href="{{route('contact.read',$contact->id)}}" class="btn btn-warning btn-sm">Unread</a>
+                      @endif
                     </td>
                     <td>
                       {{-- <a type="button" name="edit" href="{{route('product.edit',$product->slug)}}" class="btn btn-primary btn-sm"><i class="fa-solid fa-lock-open"></i></a>

@@ -193,7 +193,7 @@
                                         </div>
                                         <div class="product-back">
                                             <figure class="product-thumbnail ">
-                                                <a href="single-shop.html"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
+                                                <a href="{{route('product.details', $featuredProduct->slug)}}"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
                                             </figure>
                                             <div class="product-meta">
                                                 <ul>
@@ -252,7 +252,7 @@
                         </div>
                         <div class="product-back">
                             <figure class="product-thumbnail style-two">
-                                <a href="single-shop.html"><img src="{{$bestProduct->primary_image}}" alt="product"  /></a>
+                                <a href="{{route('product.details', $bestProduct->slug)}}"><img src="{{$bestProduct->primary_image}}" alt="product"  /></a>
                             </figure>
                             <div class="product-meta">
                                 <ul>
@@ -310,7 +310,7 @@
                                     </div>
                                     <div class="product-back">
                                         <figure class="product-thumbnail style-two">
-                                            <a href="single-shop.html"><img src="{{ $newProduct->primary_image }}" alt="product"  /></a>
+                                            <a href="{{route('product.details', $newProduct->slug)}}"><img src="{{ $newProduct->primary_image }}" alt="product"  /></a>
                                         </figure>
                                         <div class="product-meta">
                                             <ul>

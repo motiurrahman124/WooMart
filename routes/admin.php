@@ -103,8 +103,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::group(['prefix' => 'contact'], function () {
 
         Route::get('/list',[ContactController::class,'index'])->name('contact.index');
-        Route::get('/create',[ProductController::class,'create'])->name('product.create');
-        Route::post('/store',[ProductController::class,'store'])->name('product.store');
+        // Route::get('/create',[ProductController::class,'create'])->name('product.create');
+        // Route::post('/store',[ProductController::class,'store'])->name('product.store');
+
+        Route::get('/read/{id}',[ContactController::class,'read'])->name('contact.read');
         
 
     });

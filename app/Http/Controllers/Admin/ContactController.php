@@ -14,4 +14,12 @@ class ContactController extends Controller
        $contactList = Contact::all();
         return view('Backend.contact.index',['contactList' => $contactList, 'menu' => 'contact']);
     }
+
+    public function read($id)
+    {
+        Contact::where(['id' => $id])->update(['read_unread' => READ]);
+        return redirect()->back();
+    }
+
+    
 }

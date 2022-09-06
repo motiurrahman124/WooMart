@@ -23,6 +23,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::post('/store', [HomeController::class, 'store'])->name('contact.store');
 
+
+
 Route::get('/product/{slug}', [ProductController::class, 'details'])->name('product.details');
 
 Route::get('/shop', [ProductController::class, 'products'])->name('products');

@@ -135,55 +135,16 @@
                             <li class="mega-menu-itms position-static">
                                 <a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
                                 <ul class="mega-menu row">
+                                    @foreach ($megaCategories as $megaCategory )
                                     <li class="col-3">
                                         <ul>
-                                            <li class="mega-menu-title"><a href="#">Men Fashion</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
+                                            <li class="mega-menu-title"><a href="{{url('shop?category_id'.$megaCategory->id)}}">{{$megaCategory->name}}</a></li>
+                                            @foreach ($megaCategory->child as $childCategory )
+                                            <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>                                                
+                                            @endforeach
                                         </ul>                                                                                            
-                                    </li>
-                                    <li class="col-3">
-                                        <ul>
-                                            <li class="mega-menu-title"><a href="#">Women Fashion</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
-                                    </li>
-                                    <li class="col-3">
-                                        <ul>
-                                            <li class="mega-menu-title"><a href="#">Electronics</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
-                                    </li>
-                                    <li class="col-3">
-                                        <ul>
-                                            <li class="mega-menu-title"><a href="#">Mobile & Laptops</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
-                                    </li>
-                                    <li class="col-12 brad-logo-area">
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo1.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo2.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo3.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo4.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo5.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo6.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo7.png')}}" alt="clients_logo" /></a></div>
-                                    </li>
+                                    </li>     
+                                    @endforeach
                                 </ul>
                             </li>
                             <li>

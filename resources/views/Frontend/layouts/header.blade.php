@@ -21,7 +21,7 @@
                                 <a href="#"> <i class="user-icon fas fa-user-circle"></i> {{Auth::user() ? AUth::user()->name : 'Account'}} <i class="angle-down fa fa-angle-down"></i></a>
                                 <ul class="dropdon-itme">
 
-                                    @if(Auth::user())                                    
+                                    @if(Auth::user())
                                         <li><a href="{{route('profile')}}">profile</a></li>
                                         <li><a href="{{route('logout')}}">log out</a></li>
 
@@ -89,7 +89,7 @@
                                     <i class="flaticon-shopping-cart-empty-side-view"></i>
                                     <span class="count">1</span>
                                 </a>
-                                <span class="card-amount">My Cart - $0.00</span>
+                                <span class="card-amount" id="cart_amount">My Cart - $0.00</span>
                             </li>
                         </ul>
                     </div>
@@ -143,7 +143,7 @@
                                             <li><a href="#">Pant</a></li>
                                             <li><a href="#">Jeans</a></li>
                                             <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
+                                        </ul>
                                     </li>
                                     <li class="col-3">
                                         <ul>
@@ -153,7 +153,7 @@
                                             <li><a href="#">Pant</a></li>
                                             <li><a href="#">Jeans</a></li>
                                             <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
+                                        </ul>
                                     </li>
                                     <li class="col-3">
                                         <ul>
@@ -163,7 +163,7 @@
                                             <li><a href="#">Pant</a></li>
                                             <li><a href="#">Jeans</a></li>
                                             <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
+                                        </ul>
                                     </li>
                                     <li class="col-3">
                                         <ul>
@@ -173,7 +173,7 @@
                                             <li><a href="#">Pant</a></li>
                                             <li><a href="#">Jeans</a></li>
                                             <li><a href="#">Trowser</a></li>
-                                        </ul>                                                                                            
+                                        </ul>
                                     </li>
                                     <li class="col-12 brad-logo-area">
                                         <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo1.png')}}" alt="clients_logo" /></a></div>
@@ -219,7 +219,7 @@
             </div>
         </div>
     </div>
-     @else 
+     @else
     <div class="header-botom-area">
         <div class="container">
             <div class="row">
@@ -253,10 +253,10 @@
                                         <ul>
                                             <li class="mega-menu-title"><a href="{{url('shop?category_id'.$megaCategory->id)}}">{{$megaCategory->name}}</a></li>
                                             @foreach ($megaCategory->child as $childCategory )
-                                            <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>                                                
+                                            <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>
                                             @endforeach
-                                        </ul>                                                                                            
-                                    </li>     
+                                        </ul>
+                                    </li>
                                     @endforeach
                                 </ul>
                             </li>

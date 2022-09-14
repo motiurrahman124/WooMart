@@ -43,8 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getImageAttribute($image) 
+    public function getImageAttribute($image)
     {
         return $image ? asset($image) : asset('assets/Mainpage/images/account-profile.png');
+    }
+
+    public function phone()
+    {
+        return $this->hasOne(Phone::class);
     }
 }

@@ -85,11 +85,11 @@
                                 <a href="wishlist.html"><i class="flaticon-heart"></i> <span class="count">1</span> </a>
                             </li>
                             <li>
-                                <a href="cart.html">
+                                <a href="{{ route('add.list') }}">
                                     <i class="flaticon-shopping-cart-empty-side-view"></i>
-                                    <span class="count">1</span>
+                                    <span class="count" id="cart_number">{{ cartNumber() }}</span>
                                 </a>
-                                <span class="card-amount" id="cart_amount">My Cart - $0.00</span>
+                                <span class="card-amount" id="cart_amount">My Cart - {{ cartAmount() }}</span>
                             </li>
                         </ul>
                     </div>

@@ -25,11 +25,11 @@ class Product extends Model
     {
 
         return $this->discount > 0 ? ($this->is_percentage_discount ? ((100 - $this->discount) * $this->price ) /100 : $this->price - $this->discount ) :  $this->price;
-        
+
         // if($this->discount > 0) {
         //     if($this->is_percentage_discount) {
 
-        //         return ((100 - $this->discount) * $this->price ) /100; 
+        //         return ((100 - $this->discount) * $this->price ) /100;
         //     }
         //     return $this->price - $this->discount;
         // }
@@ -39,6 +39,11 @@ class Product extends Model
     public function getPrimaryImageAttribute($primary_image)
     {
         return asset($primary_image);
+    }
+
+    public function cart()
+    {
+        return $this->hasOne(Cart::class);
     }
 
 }

@@ -21,7 +21,7 @@
                                 <a href="#"> <i class="user-icon fas fa-user-circle"></i> {{Auth::user() ? AUth::user()->name : 'Account'}} <i class="angle-down fa fa-angle-down"></i></a>
                                 <ul class="dropdon-itme">
 
-                                    @if(Auth::user())                                    
+                                    @if(Auth::user())
                                         <li><a href="{{route('profile')}}">profile</a></li>
                                         <li><a href="{{route('logout')}}">log out</a></li>
 
@@ -89,7 +89,7 @@
                                     <i class="flaticon-shopping-cart-empty-side-view"></i>
                                     <span class="count">1</span>
                                 </a>
-                                <span class="card-amount">My Cart - $0.00</span>
+                                <span class="card-amount" id="cart_amount">My Cart - $0.00</span>
                             </li>
                         </ul>
                     </div>
@@ -138,6 +138,7 @@
                                     @foreach ($megaCategories as $megaCategory )
                                     <li class="col-3">
                                         <ul>
+<<<<<<< HEAD
                                             <li class="mega-menu-title"><a href="{{url('shop?category_id'.$megaCategory->id)}}">{{$megaCategory->name}}</a></li>
                                             @foreach ($megaCategory->child as $childCategory )
                                             <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>                                                
@@ -145,6 +146,55 @@
                                         </ul>                                                                                            
                                     </li>     
                                     @endforeach
+=======
+                                            <li class="mega-menu-title"><a href="#">Men Fashion</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Women Fashion</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Electronics</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-3">
+                                        <ul>
+                                            <li class="mega-menu-title"><a href="#">Mobile & Laptops</a></li>
+                                            <li><a href="#">Shirt</a></li>
+                                            <li><a href="#">T- Shirt</a></li>
+                                            <li><a href="#">Pant</a></li>
+                                            <li><a href="#">Jeans</a></li>
+                                            <li><a href="#">Trowser</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="col-12 brad-logo-area">
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo1.png')}}" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo2.png')}}" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo3.png')}}" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo4.png')}}" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo5.png')}}" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo6.png')}}" alt="clients_logo" /></a></div>
+                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo7.png')}}" alt="clients_logo" /></a></div>
+                                    </li>
+>>>>>>> cfd325656ab43bd7f2a7806166faf3e5dc512054
                                 </ul>
                             </li>
                             <li>
@@ -180,7 +230,7 @@
             </div>
         </div>
     </div>
-     @else 
+     @else
     <div class="header-botom-area">
         <div class="container">
             <div class="row">
@@ -214,10 +264,10 @@
                                         <ul>
                                             <li class="mega-menu-title"><a href="{{url('shop?category_id'.$megaCategory->id)}}">{{$megaCategory->name}}</a></li>
                                             @foreach ($megaCategory->child as $childCategory )
-                                            <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>                                                
+                                            <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>
                                             @endforeach
-                                        </ul>                                                                                            
-                                    </li>     
+                                        </ul>
+                                    </li>
                                     @endforeach
                                 </ul>
                             </li>

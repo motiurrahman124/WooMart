@@ -201,8 +201,8 @@
                                                     <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                                 </ul>
                                             </div>
-                                            <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
-                                        </div>
+                                            <a class="add-cart" href="javascript:void(0)" onclick="addToCart({{ $featuredProduct->id}})"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
+                                         </div>
                                     </div>
                                 </div>
 
@@ -260,7 +260,7 @@
                                     <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                 </ul>
                             </div>
-                            <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
+                            <a class="add-cart" href="javascript:void(0)" onclick="addToCart({{ $bestProduct->id}})"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
                         </div>
                     </div>
                 @endforeach
@@ -318,7 +318,7 @@
                                                 <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                             </ul>
                                         </div>
-                                        <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
+                                        <a class="add-cart" href="javascript:void(0)" onclick="addToCart({{ $newProduct->id}})"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
                                     </div>
                                 </div>
                                 @endforeach
@@ -401,11 +401,12 @@
                 '_token': "{{csrf_token()}}"
             },
             success: function (data) {
-                console.log(data);
-                document.getElementById('cartlist_count').innerHTML = data['data'].item_number;
-                document.getElementById('mobile_cartlist_count').innerHTML = data['data'].item_number;
 
-                document.getElementById('cart_amount').innerHTML = "<b>My Cart </b> - tk" +data['total_price'].toFixed(2);
+                console.log();
+
+                document.getElementById('cart_number').innerHTML = data['item_number'];
+                document.getElementById('cart_amount').innerHTML = "<b>My Cart </b> -tk " +data['total_price'].toFixed(2);
+            // ei porjonto dekhben
 
                 if (data['success'] == true) {
 
@@ -430,8 +431,6 @@
                 animation: true,
                 title:data['message']
              });
-
-
                 } else {
 
 
@@ -458,7 +457,6 @@
                      });
 
                 }
-
             }
 
         });

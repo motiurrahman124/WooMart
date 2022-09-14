@@ -59,5 +59,7 @@ Route::group(['prefix' => 'blog'], function(){
 });
 
 Route::group(['prefix' => 'cart'] , function(){
+    Route::get('list', [CartController::class,'index'])->name('add.list');
     Route::post('store', [CartController::class,'addtoCart'])->name('add.cart');
+    Route::get('remove/{id}', [CartController::class,'remove'])->name('cart.remove');
 });

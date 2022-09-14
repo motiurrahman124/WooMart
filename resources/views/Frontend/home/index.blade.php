@@ -63,11 +63,11 @@
                         </div>
 
                         @endforeach
-
+                        
 
                         @endif
-
-
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                             </a>
                             <span class="categories-name">{{$top_category->name}}</span>
                             <a href="#" class="arrow-btn"><i class="fas fa-arrow-right"></i></a>
-                        </div>
+                        </div>                            
                         @endforeach
                     </div>
                 </div>
@@ -155,14 +155,14 @@
                                                     <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                                 </ul>
                                             </div>
-                                            <a class="add-cart" href="javascript:void(0)" onclick="addToCart({{ $featuredProduct->id}})"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
+                                            <a class="add-cart" href="#"> <i class="flaticon-shopping-cart-empty-side-view"></i> Add to Cart</a>
                                         </div>
                                     </div>
                                 </div>
                                 @if($loop->iteration >= 4)
                                     @break
                                 @endif
-                                @endforeach
+                                @endforeach                               
                             </div>
                         </div>
                         <div class="featured-list m-b-30">
@@ -205,9 +205,9 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                
                                 @endforeach
-
+                               
                             </div>
                         </div>
                     </div>
@@ -264,7 +264,7 @@
                         </div>
                     </div>
                 @endforeach
-
+                
 
 
             </div>
@@ -322,10 +322,10 @@
                                     </div>
                                 </div>
                                 @endforeach
+                                
 
 
-
-                            </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
@@ -348,7 +348,7 @@
                     <div class="blog-list blog-slide m-b-30">
 
                         @foreach ($data['recent_blogs'] as $blog)
-
+                            
                         <article  class="single-post">
                             <div class="post-thumbnail">
                                 <a href="single-blog.html">
@@ -384,85 +384,5 @@
     </div>
 </section>
 @endif
-
-@endsection
-
-
-@section('after_script')
-<script>
-    function addToCart (product_id) {
-
-        $.ajax({
-
-            url: "{{URL::route('add.cart')}}",
-            method: "POST",
-            data: {
-                'product_id': product_id,
-                '_token': "{{csrf_token()}}"
-            },
-            success: function (data) {
-                console.log(data);
-                document.getElementById('cartlist_count').innerHTML = data['data'].item_number;
-                document.getElementById('mobile_cartlist_count').innerHTML = data['data'].item_number;
-
-                document.getElementById('cart_amount').innerHTML = "<b>My Cart </b> - tk" +data['total_price'].toFixed(2);
-
-                if (data['success'] == true) {
-
-                    var toastMixin = Swal.mixin({
-                         toast: true,
-                         icon: 'success',
-                        title: 'General Title',
-                         animation: false,
-                        position: 'top-right',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-
-                        didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                         }
-                    });
-
-
-                toastMixin.fire({
-                animation: true,
-                title:data['message']
-             });
-
-
-                } else {
-
-
-                    var toastMixin = Swal.mixin({
-                         toast: true,
-                         icon: 'success',
-                        title: 'General Title',
-                         animation: false,
-                        position: 'top-right',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-
-                        didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                         }
-                    });
-
-
-                     toastMixin.fire({
-                     title: data['message'],
-                    icon: 'error'
-                     });
-
-                }
-
-            }
-
-        });
-    }
-</script>
 
 @endsection

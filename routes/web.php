@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -44,7 +43,7 @@ Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function(){
 
     Route::get('/', [ProfileController::class, 'profile'])->name('profile');
     Route::post('/update', [ProfileController::class, 'update'])->name('profile.update');
-
+    
     Route::get('/password-change', [ProfileController::class, 'passwordChange'])->name('password.change');
     Route::post('/password-change-process', [ProfileController::class, 'passwordChangeProcess'])->name('password.change.process');
 
@@ -56,8 +55,4 @@ Route::group(['prefix' => 'blog'], function(){
     Route::get('/', [HomeController::class, 'blog'])->name('blog');
     Route::get('/single-blog/{id}', [BlogController::class, 'single_blog'])->name('single_blog');
     Route::post('/blog-comment', [BlogController::class, 'comment'])->name('blog.comment.store');
-});
-
-Route::group(['prefix' => 'cart'] , function(){
-    Route::post('store', [CartController::class,'addtoCart'])->name('add.cart');
 });

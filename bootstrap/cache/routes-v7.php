@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Jt8Uy2gxqGMl7u4O',
+            '_route' => 'generated::Dxz7gyEPHFGycmhU',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::r0a0O4uhZAdueapo',
+            '_route' => 'generated::ztwcsSQX7nbFtRau',
           ),
           1 => NULL,
           2 => 
@@ -313,6 +313,26 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
+      '/profile/wishlist' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'wishlist',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
       '/profile/update' => 
       array (
         0 => 
@@ -398,6 +418,84 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'blog.comment.store',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/cart/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'add.list',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/cart/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'add.cart',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'POST' => 0,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/Wishlist/list' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'show.wishlist',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/Wishlist/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'add.WishList',
           ),
           1 => NULL,
           2 => 
@@ -882,7 +980,7 @@ app('router')->setCompiledRoutes(
     ),
     2 => 
     array (
-      0 => '{^(?|/product/([^/]++)(*:24)|/blog/single\\-blog/([^/]++)(*:58)|/admin/(?|b(?|log\\-(?|edit/([^/]++)(*:100)|delete/([^/]++)(*:123))|rand/(?|edit/([^/]++)(*:153)|delete/([^/]++)(*:176)))|slider/(?|edit/([^/]++)(*:209)|delete/([^/]++)(*:232))|c(?|ategory/(?|edit/([^/]++)(*:269)|delete/([^/]++)(*:292))|ontact/(?|read/([^/]++)(*:324)|unread/([^/]++)(*:347)))|product/(?|e(?|nable(?|/([^/]++)(*:389)|\\-disable/([^/]++)(*:415))|dit/([^/]++)(*:436))|d(?|isable/([^/]++)(*:464)|elete/([^/]++)(*:486)))))/?$}sDu',
+      0 => '{^(?|/product/([^/]++)(*:24)|/blog/single\\-blog/([^/]++)(*:58)|/cart/remove/([^/]++)(*:86)|/Wishlist/remove/([^/]++)(*:118)|/admin/(?|b(?|log\\-(?|edit/([^/]++)(*:161)|delete/([^/]++)(*:184))|rand/(?|edit/([^/]++)(*:214)|delete/([^/]++)(*:237)))|slider/(?|edit/([^/]++)(*:270)|delete/([^/]++)(*:293))|c(?|ategory/(?|edit/([^/]++)(*:330)|delete/([^/]++)(*:353))|ontact/read/([^/]++)(*:382))|product/(?|e(?|nable(?|/([^/]++)(*:423)|\\-disable/([^/]++)(*:449))|dit/([^/]++)(*:470))|d(?|isable/([^/]++)(*:498)|elete/([^/]++)(*:520)))))/?$}sDu',
     ),
     3 => 
     array (
@@ -932,7 +1030,53 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      100 => 
+      86 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'cart.remove',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      118 => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'wishlist.remove',
+          ),
+          1 => 
+          array (
+            0 => 'id',
+          ),
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => true,
+          6 => NULL,
+        ),
+      ),
+      161 => 
       array (
         0 => 
         array (
@@ -955,7 +1099,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      123 => 
+      184 => 
       array (
         0 => 
         array (
@@ -978,7 +1122,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      153 => 
+      214 => 
       array (
         0 => 
         array (
@@ -1001,7 +1145,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      176 => 
+      237 => 
       array (
         0 => 
         array (
@@ -1024,7 +1168,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      209 => 
+      270 => 
       array (
         0 => 
         array (
@@ -1047,7 +1191,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      232 => 
+      293 => 
       array (
         0 => 
         array (
@@ -1070,7 +1214,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      269 => 
+      330 => 
       array (
         0 => 
         array (
@@ -1093,7 +1237,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      292 => 
+      353 => 
       array (
         0 => 
         array (
@@ -1116,7 +1260,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      324 => 
+      382 => 
       array (
         0 => 
         array (
@@ -1126,7 +1270,7 @@ app('router')->setCompiledRoutes(
           ),
           1 => 
           array (
-            0 => 'slug',
+            0 => 'id',
           ),
           2 => 
           array (
@@ -1139,30 +1283,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      347 => 
-      array (
-        0 => 
-        array (
-          0 => 
-          array (
-            '_route' => 'contact.unread',
-          ),
-          1 => 
-          array (
-            0 => 'slug',
-          ),
-          2 => 
-          array (
-            'GET' => 0,
-            'HEAD' => 1,
-          ),
-          3 => NULL,
-          4 => false,
-          5 => true,
-          6 => NULL,
-        ),
-      ),
-      389 => 
+      423 => 
       array (
         0 => 
         array (
@@ -1185,7 +1306,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      415 => 
+      449 => 
       array (
         0 => 
         array (
@@ -1208,7 +1329,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      436 => 
+      470 => 
       array (
         0 => 
         array (
@@ -1231,7 +1352,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      464 => 
+      498 => 
       array (
         0 => 
         array (
@@ -1254,7 +1375,7 @@ app('router')->setCompiledRoutes(
           6 => NULL,
         ),
       ),
-      486 => 
+      520 => 
       array (
         0 => 
         array (
@@ -1292,7 +1413,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::Jt8Uy2gxqGMl7u4O' => 
+    'generated::Dxz7gyEPHFGycmhU' => 
     array (
       'methods' => 
       array (
@@ -1313,7 +1434,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::Jt8Uy2gxqGMl7u4O',
+        'as' => 'generated::Dxz7gyEPHFGycmhU',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1438,7 +1559,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::r0a0O4uhZAdueapo' => 
+    'generated::ztwcsSQX7nbFtRau' => 
     array (
       'methods' => 
       array (
@@ -1455,13 +1576,13 @@ app('router')->setCompiledRoutes(
         ),
         'uses' => 'O:47:"Laravel\\SerializableClosure\\SerializableClosure":1:{s:12:"serializable";O:46:"Laravel\\SerializableClosure\\Serializers\\Signed":2:{s:12:"serializable";s:295:"O:46:"Laravel\\SerializableClosure\\Serializers\\Native":5:{s:3:"use";a:0:{}s:8:"function";s:77:"function (\\Illuminate\\Http\\Request $request) {
     return $request->user();
-}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000005030000000000000000";}";s:4:"hash";s:44:"4xpNGzIg+1tQ2gQIXHcUsgd+kXEVybhV+WMWyEt/6V4=";}}',
+}";s:5:"scope";s:37:"Illuminate\\Routing\\RouteFileRegistrar";s:4:"this";N;s:4:"self";s:32:"00000000000004870000000000000000";}";s:4:"hash";s:44:"aZis2YkFVa+CXxfaZ6mPiXv1sX2ja+rBbi4POz/+hoo=";}}',
         'namespace' => NULL,
         'prefix' => 'api',
         'where' => 
         array (
         ),
-        'as' => 'generated::r0a0O4uhZAdueapo',
+        'as' => 'generated::ztwcsSQX7nbFtRau',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1882,6 +2003,44 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
+    'wishlist' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'profile/wishlist',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+          1 => 'auth',
+        ),
+        'uses' => 'App\\Http\\Controllers\\User\\ProfileController@wishlist',
+        'controller' => 'App\\Http\\Controllers\\User\\ProfileController@wishlist',
+        'namespace' => NULL,
+        'prefix' => '/profile',
+        'where' => 
+        array (
+        ),
+        'as' => 'wishlist',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
     'profile.update' => 
     array (
       'methods' => 
@@ -2089,6 +2248,226 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'blog.comment.store',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'add.list' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@index',
+        'controller' => 'App\\Http\\Controllers\\CartController@index',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'add.list',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'add.cart' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'cart/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@addtoCart',
+        'controller' => 'App\\Http\\Controllers\\CartController@addtoCart',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'add.cart',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'cart.remove' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/remove/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CartController@remove',
+        'controller' => 'App\\Http\\Controllers\\CartController@remove',
+        'namespace' => NULL,
+        'prefix' => '/cart',
+        'where' => 
+        array (
+        ),
+        'as' => 'cart.remove',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'show.wishlist' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'Wishlist/list',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\WishlistController@index',
+        'controller' => 'App\\Http\\Controllers\\WishlistController@index',
+        'namespace' => NULL,
+        'prefix' => '/Wishlist',
+        'where' => 
+        array (
+        ),
+        'as' => 'show.wishlist',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'add.WishList' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'POST',
+      ),
+      'uri' => 'Wishlist/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\WishlistController@addtoWishList',
+        'controller' => 'App\\Http\\Controllers\\WishlistController@addtoWishList',
+        'namespace' => NULL,
+        'prefix' => '/Wishlist',
+        'where' => 
+        array (
+        ),
+        'as' => 'add.WishList',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'wishlist.remove' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'Wishlist/remove/{id}',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\WishlistController@remove',
+        'controller' => 'App\\Http\\Controllers\\WishlistController@remove',
+        'namespace' => NULL,
+        'prefix' => '/Wishlist',
+        'where' => 
+        array (
+        ),
+        'as' => 'wishlist.remove',
       ),
       'fallback' => false,
       'defaults' => 
@@ -3476,7 +3855,7 @@ app('router')->setCompiledRoutes(
         0 => 'GET',
         1 => 'HEAD',
       ),
-      'uri' => 'admin/contact/read/{slug}',
+      'uri' => 'admin/contact/read/{id}',
       'action' => 
       array (
         'middleware' => 
@@ -3491,43 +3870,6 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'contact.read',
-      ),
-      'fallback' => false,
-      'defaults' => 
-      array (
-      ),
-      'wheres' => 
-      array (
-      ),
-      'bindingFields' => 
-      array (
-      ),
-      'lockSeconds' => NULL,
-      'waitSeconds' => NULL,
-      'withTrashed' => false,
-    ),
-    'contact.unread' => 
-    array (
-      'methods' => 
-      array (
-        0 => 'GET',
-        1 => 'HEAD',
-      ),
-      'uri' => 'admin/contact/unread/{slug}',
-      'action' => 
-      array (
-        'middleware' => 
-        array (
-          0 => 'web',
-        ),
-        'uses' => 'App\\Http\\Controllers\\Admin\\ContactController@unread',
-        'controller' => 'App\\Http\\Controllers\\Admin\\ContactController@unread',
-        'namespace' => NULL,
-        'prefix' => 'admin/contact',
-        'where' => 
-        array (
-        ),
-        'as' => 'contact.unread',
       ),
       'fallback' => false,
       'defaults' => 

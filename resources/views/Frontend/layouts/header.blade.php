@@ -82,7 +82,7 @@
                     <div class="middle-right">
                         <ul>
                             <li>
-                                <a href="wishlist.html"><i class="flaticon-heart"></i> <span class="count">1</span> </a>
+                                <a href="{{ route('show.wishlist') }}"><i class="flaticon-heart"></i> <span class="count" id="wishlist_number">{{ wishlistNumber() }}</span> </a>
                             </li>
                             <li>
                                 <a href="{{ route('add.list') }}">
@@ -138,7 +138,6 @@
                                     @foreach ($megaCategories as $megaCategory )
                                     <li class="col-3">
                                         <ul>
-<<<<<<< HEAD
                                             <li class="mega-menu-title"><a href="{{url('shop?category_id'.$megaCategory->id)}}">{{$megaCategory->name}}</a></li>
                                             @foreach ($megaCategory->child as $childCategory )
                                             <li><a href="{{url('shop?category_id'.$childCategory->id)}}">{{$childCategory->name}}</a></li>                                                
@@ -146,55 +145,6 @@
                                         </ul>                                                                                            
                                     </li>     
                                     @endforeach
-=======
-                                            <li class="mega-menu-title"><a href="#">Men Fashion</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-3">
-                                        <ul>
-                                            <li class="mega-menu-title"><a href="#">Women Fashion</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-3">
-                                        <ul>
-                                            <li class="mega-menu-title"><a href="#">Electronics</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-3">
-                                        <ul>
-                                            <li class="mega-menu-title"><a href="#">Mobile & Laptops</a></li>
-                                            <li><a href="#">Shirt</a></li>
-                                            <li><a href="#">T- Shirt</a></li>
-                                            <li><a href="#">Pant</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Trowser</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="col-12 brad-logo-area">
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo1.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo2.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo3.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo4.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo5.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo6.png')}}" alt="clients_logo" /></a></div>
-                                        <div><a href="#"><img src="{{asset('assets/Mainpage/images/brands/clients_logo7.png')}}" alt="clients_logo" /></a></div>
-                                    </li>
->>>>>>> cfd325656ab43bd7f2a7806166faf3e5dc512054
                                 </ul>
                             </li>
                             <li>

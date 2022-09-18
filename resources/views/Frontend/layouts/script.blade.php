@@ -3,6 +3,8 @@
         <script src="{{asset('assets/Mainpage/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/Mainpage/js/plugins.js')}}"></script>
         <script src="{{asset('assets/Mainpage/js/main.js')}}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+
 
         <script>
 
@@ -36,64 +38,79 @@
                 },
                 success: function (data) {
 
-                        console.log();
-
                         document.getElementById('cart_number').innerHTML = data['item_number'];
                         document.getElementById('cart_amount').innerHTML = "<b>My Cart </b> -tk " +data['total_price'].toFixed(2);
                 // ei porjonto dekhben
 
-                        if (data['success'] == true) {
 
-                        var toastMixin = Swal.mixin({
-                                toast: true,
-                                icon: 'success',
-                                title: 'General Title',
-                                animation: false,
-                                position: 'top-right',
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
+                var toastMixin = Swal.mixin({
+                    toast: true,
+                    icon: 'success',
+                    title: 'General Title',
+                    animation: false,
+                    position: 'top-right',
+                    showConfirmButton: false,
+                    timer: 3000,
+                    timerProgressBar: true,
 
-                                didOpen: (toast) => {
-                                toast.addEventListener('mouseenter', Swal.stopTimer)
-                                toast.addEventListener('mouseleave', Swal.resumeTimer)
-                                }
-                        });
-
-
-                        toastMixin.fire({
-                        animation: true,
-                        title:data['message']
+                    didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                    }
                 });
-                        } else {
 
 
-                        var toastMixin = Swal.mixin({
-                                toast: true,
-                                icon: 'success',
-                                title: 'General Title',
-                                animation: false,
-                                position: 'top-right',
-                                showConfirmButton: false,
-                                timer: 3000,
-                                timerProgressBar: true,
+                toastMixin.fire({
+                    animation: true,
+                    title:data['message']
+                });
+                    }
 
-                                didOpen: (toast) => {
-                                toast.addEventListener('mouseenter', Swal.stopTimer)
-                                toast.addEventListener('mouseleave', Swal.resumeTimer)
-                                }
-                        });
+                });
+        }
 
+        // incrment
 
-                        toastMixin.fire({
-                        title: data['message'],
-                        icon: 'error'
-                        });
+        function cartIncrement(id, quantity) {
 
-                        }
+            $.ajax({
+
+                url: '{{URL::route('cart.increment')}}',
+                method: 'POST',
+                data: {
+                    'id': id,
+                    'quantity': quantity,
+                    '_token': '{{csrf_token()}}'
+                },
+
+                success: function (res) {
+
+                    $('#cart_content').html(res);
+
                 }
+            });
 
-                });
+        }
+
+        // decrement
+        function cartDecrement(id, qty)
+        {
+            $.ajax({
+
+                url: '{{URL::route('cart.decrement')}}',
+                method: 'POST',
+                data: {
+                    'id': id,
+                    'quantity': qty,
+                    '_token': '{{csrf_token()}}'
+                },
+
+                success: function (res) {
+
+                    $('#cart_content').html(res);
+
+                }
+            });
         }
         </script>
 

@@ -53,6 +53,11 @@ function cartAmount()
     return $cart_price;
 }
 
+function totalTax($amount, $tax)
+{
+    return ($amount*$tax) / 100;
+}
+
 
 function wishlistNumber()
 {

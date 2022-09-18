@@ -53,6 +53,7 @@ class CartController extends Controller
 
         $data['item_number'] = $cart_number;
         $data['total_price'] = $cart_price;
+        $data['message'] = "successfully added";
 
         return response()->json($data);
     }
@@ -62,5 +63,34 @@ class CartController extends Controller
     {
          Cart::where(['id' => $id])->delete();
          return redirect()->back();
+    }
+
+    public function increment(Request $request)
+    {
+        $cart = Cart::where(['id' => $request->id])->first();
+        $cart->update([
+            'qty'   => $cart->qty + 1
+        ]);
+
+        $cart =  Cart::where(['user_id'=> Auth::id()])->with('product')->get();
+        response()->json($cart);
+        return view('frontend.cart.cart_content',['carts' => $cart]);
+    }
+
+    public function decrement(Request $request)
+    {
+        $cart = Cart::where(['id' => $request->id])->first();
+        if($cart->qty == 1) {
+            $cart->delete();
+        } else {
+            $cart->update([
+                'qty'   => $cart->qty - 1
+            ]);
+        }
+
+        $cart =  Cart::where(['user_id'=> Auth::id()])->with('product')->get();
+
+        response()->json($cart);
+        return view('frontend.cart.cart_content',['carts' => $cart]);
     }
 }

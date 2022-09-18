@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -96,6 +97,17 @@ Route::group(['prefix' => 'admin'], function() {
        
         Route::get('/delete/{slug}',[ProductController::class,'delete'])->name('product.delete');
         Route::get('/enable-disable/{id}',[ProductController::class,'enableDisable'])->name('product.enableDisable');
+
+    });
+
+    Route::group(['prefix' => 'contact'], function () {
+
+        Route::get('/list',[ContactController::class,'index'])->name('contact.index');
+        // Route::get('/create',[ProductController::class,'create'])->name('product.create');
+        // Route::post('/store',[ProductController::class,'store'])->name('product.store');
+
+        Route::get('/read/{id}',[ContactController::class,'read'])->name('contact.read');
+        
 
     });
 

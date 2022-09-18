@@ -35,18 +35,19 @@
                 <div class="section-wrap form-wrap">
                     <div class="primary-form">
                         <h3 class="form-top-title">Drop a line to us</h3>
-                        <form action="#">
+                        <form action="{{ route('contact.store') }}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="firstname">First Name</label>
-                                        <input type="text" class="form-control" id="firstname" name="firstname" required />
+                                        <input type="text" class="form-control" id="firstname" name="firstName" required />
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="form-group">
                                         <label for="lastname">Last Name</label>
-                                        <input type="text" class="form-control" id="lastname" name="lastname" required />
+                                        <input type="text" class="form-control" id="lastname" name="lastName" required />
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
@@ -64,7 +65,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group">
                                         <label for="message">Message</label>
-                                        <textarea class="message-box" id="message" rows="3"></textarea>
+                                        <textarea class="message-box" id="message" name="message" rows="3" required></textarea>
                                       </div>
                                 </div>
                             </div>

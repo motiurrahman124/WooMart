@@ -102,6 +102,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{ route('contact.index') }}" class="nav-link {{ isset($menu) && $menu == 'contact' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Contact List
+              </p>
+            </a>
+          </li>
+
 
         </ul>
       </nav>

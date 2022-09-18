@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Wishlist;
 use App\Rules\CurrentPasswordCheckRule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +15,12 @@ class ProfileController extends Controller
     public function profile()
     {
         $user = User::where(['id' => Auth::id()])->first();
-        return view('Frontend.profile.my_profile',['user' => $user]);
+        return view('Frontend.profile.my_profile',['user' => $user, 'menu' => 'profile']);
+    }
+    public function wishlist()
+    {
+        $wishlist = Wishlist::where(['user_id' => auth::id()])->with('product')->get();
+        return view('Frontend.profile.my_wishlist',['wishlist' => $wishlist, 'menu' => 'wish']);
     }
 
     public function update(Request $request)

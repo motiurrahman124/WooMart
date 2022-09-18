@@ -3,6 +3,7 @@
 use App\Models\Cart;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Wishlist;
 use Illuminate\Support\Facades\Auth;
 
 function fileUploade($image, $path)
@@ -50,4 +51,10 @@ function cartAmount()
     }
 
     return $cart_price;
+}
+
+
+function wishlistNumber()
+{
+    return Wishlist::where(['user_id' => Auth::id()])->count();
 }

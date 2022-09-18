@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -22,6 +23,9 @@ use App\Http\Controllers\UserAuthController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
+Route::post('/store', [HomeController::class, 'store'])->name('contact.store');
+
+
 
 Route::get('/product/{slug}', [ProductController::class, 'details'])->name('product.details');
 
@@ -40,6 +44,7 @@ Route::get('/logout', [UserAuthController::class, 'logout'])->name('logout');
 Route::group(['prefix' => 'profile', 'middleware' => 'auth'], function(){
 
     Route::get('/', [ProfileController::class, 'profile'])->name('profile');
+    Route::get('/wishlist', [ProfileController::class, 'wishlist'])->name('wishlist');
     Route::post('/update', [ProfileController::class, 'update'])->name('profile.update');
 
     Route::get('/password-change', [ProfileController::class, 'passwordChange'])->name('password.change');
@@ -59,4 +64,10 @@ Route::group(['prefix' => 'cart'] , function(){
     Route::get('list', [CartController::class,'index'])->name('add.list');
     Route::post('store', [CartController::class,'addtoCart'])->name('add.cart');
     Route::get('remove/{id}', [CartController::class,'remove'])->name('cart.remove');
+});
+
+Route::group(['prefix' => 'Wishlist'] , function(){
+    Route::get('list', [WishlistController::class,'index'])->name('show.wishlist');
+    Route::post('store', [WishlistController::class,'addtoWishList'])->name('add.WishList');
+    Route::get('remove/{id}', [WishlistController::class,'remove'])->name('wishlist.remove');
 });

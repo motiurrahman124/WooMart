@@ -151,7 +151,7 @@
                                             </figure>
                                             <div class="product-meta">
                                                 <ul>
-                                                    <li><a href="#"><i class="flaticon-heart"></i> </a></li>
+                                                    <li><a href="javascript:void(0)" onclick="addToWishList({{ $featuredProduct->id}})"><i class="flaticon-heart"></i> </a></li>
                                                     <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                                 </ul>
                                             </div>
@@ -193,11 +193,11 @@
                                         </div>
                                         <div class="product-back">
                                             <figure class="product-thumbnail ">
-                                                <a href="single-shop.html"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
+                                                <a href="{{route('product.details', $featuredProduct->slug)}}"><img src="{{$featuredProduct->primary_image}}" alt="product"  /></a>
                                             </figure>
                                             <div class="product-meta">
                                                 <ul>
-                                                    <li><a href="#"><i class="flaticon-heart"></i> </a></li>
+                                                    <li><a href="javascript:void(0)" onclick="addToWishList({{ $featuredProduct->id}})"><i class="flaticon-heart"></i> </a></li>
                                                     <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                                 </ul>
                                             </div>
@@ -252,11 +252,11 @@
                         </div>
                         <div class="product-back">
                             <figure class="product-thumbnail style-two">
-                                <a href="single-shop.html"><img src="{{$bestProduct->primary_image}}" alt="product"  /></a>
+                                <a href="{{route('product.details', $bestProduct->slug)}}"><img src="{{$bestProduct->primary_image}}" alt="product"  /></a>
                             </figure>
                             <div class="product-meta">
                                 <ul>
-                                    <li><a href="#"><i class="flaticon-heart"></i> </a></li>
+                                    <li><a href="javascript:void(0)" onclick="addToWishList({{ $bestProduct->id}})"><i class="flaticon-heart"></i> </a></li>
                                     <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                 </ul>
                             </div>
@@ -310,11 +310,11 @@
                                     </div>
                                     <div class="product-back">
                                         <figure class="product-thumbnail style-two">
-                                            <a href="single-shop.html"><img src="{{ $newProduct->primary_image }}" alt="product"  /></a>
+                                            <a href="{{route('product.details', $newProduct->slug)}}"><img src="{{ $newProduct->primary_image }}" alt="product"  /></a>
                                         </figure>
                                         <div class="product-meta">
                                             <ul>
-                                                <li><a href="#"><i class="flaticon-heart"></i> </a></li>
+                                                <li><a href="javascript:void(0)" onclick="addToWishList({{ $newProduct->id}})"><i class="flaticon-heart"></i> </a></li>
                                                 <li><a href="#" data-toggle="modal" data-target="#prodect-modal"><i class="flaticon-eye"></i> </a></li>
                                             </ul>
                                         </div>
@@ -388,79 +388,4 @@
 @endsection
 
 
-@section('after_script')
-<script>
-    function addToCart (product_id) {
 
-        $.ajax({
-
-            url: "{{URL::route('add.cart')}}",
-            method: "POST",
-            data: {
-                'product_id': product_id,
-                '_token': "{{csrf_token()}}"
-            },
-            success: function (data) {
-
-                console.log();
-
-                document.getElementById('cart_number').innerHTML = data['item_number'];
-                document.getElementById('cart_amount').innerHTML = "<b>My Cart </b> -tk " +data['total_price'].toFixed(2);
-            // ei porjonto dekhben
-
-                if (data['success'] == true) {
-
-                    var toastMixin = Swal.mixin({
-                         toast: true,
-                         icon: 'success',
-                        title: 'General Title',
-                         animation: false,
-                        position: 'top-right',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-
-                        didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                         }
-                    });
-
-
-                toastMixin.fire({
-                animation: true,
-                title:data['message']
-             });
-                } else {
-
-
-                    var toastMixin = Swal.mixin({
-                         toast: true,
-                         icon: 'success',
-                        title: 'General Title',
-                         animation: false,
-                        position: 'top-right',
-                        showConfirmButton: false,
-                        timer: 3000,
-                        timerProgressBar: true,
-
-                        didOpen: (toast) => {
-                        toast.addEventListener('mouseenter', Swal.stopTimer)
-                        toast.addEventListener('mouseleave', Swal.resumeTimer)
-                         }
-                    });
-
-
-                     toastMixin.fire({
-                     title: data['message'],
-                    icon: 'error'
-                     });
-
-                }
-            }
-
-        });
-    }
-</script>
-
-@endsection

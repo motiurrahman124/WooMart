@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Brand;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\Product;
 use App\Models\Slider;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class HomeController extends Controller
         $categories     = Category::where(['parent_id' => 0])->with('child')->limit(11)->get();     
         $top_categories = Category::where(['is_top_product_category' => true])->get();     
        
-        return view('Frontend.home.index',['products' => $products, 'data' => $data, 'menu' => 'home','top_categories' => $top_categories, 'categories' => $categories]);
+        return view('Frontend.home.index',['products' => $products, 'data' => $data, 'menu' => 'home','top_categories' => $top_categories, 'categoriess' => $categories]);
     }
 
     
@@ -37,6 +38,18 @@ class HomeController extends Controller
     public function contact()
     {
         return view('Frontend.home.contact');
+    }
+    public function store(Request $request)
+    {
+        $data['first_name'] = $request->firstName;
+        $data['last_name'] = $request->lastName;
+        $data['phone'] = $request->phone;
+        $data['email'] = $request->email;
+        $data['message'] = $request->message;
+
+        Contact::create($data);
+        
+        return redirect()->route('contact');
     }
     
 }

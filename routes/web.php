@@ -64,6 +64,8 @@ Route::group(['prefix' => 'cart'] , function(){
     Route::get('list', [CartController::class,'index'])->name('add.list');
     Route::post('store', [CartController::class,'addtoCart'])->name('add.cart');
     Route::get('remove/{id}', [CartController::class,'remove'])->name('cart.remove');
+    Route::post('cart-increment', [CartController::class,'increment'])->name('cart.increment');
+    Route::post('cart-decrement', [CartController::class,'decrement'])->name('cart.decrement');
 });
 
 Route::group(['prefix' => 'Wishlist'] , function(){

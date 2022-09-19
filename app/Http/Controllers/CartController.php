@@ -53,7 +53,7 @@ class CartController extends Controller
 
         $data['item_number'] = $cart_number;
         $data['total_price'] = $cart_price;
-        $data['message'] = "successfully added";
+        $data['message'] = "successfully added in your cart";
 
         return response()->json($data);
     }
@@ -93,4 +93,8 @@ class CartController extends Controller
         response()->json($cart);
         return view('frontend.cart.cart_content',['carts' => $cart]);
     }
+
+
+
+    
 }

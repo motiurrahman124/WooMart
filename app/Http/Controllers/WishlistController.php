@@ -39,6 +39,7 @@ class WishlistController extends Controller
 
 
         $data['item_number'] = $wishlist_number;
+        $data['message'] = "Successfully added in your wishlist";
 
         return response()->json($data);
     }

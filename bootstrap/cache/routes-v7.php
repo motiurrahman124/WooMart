@@ -24,7 +24,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::Fg6V2zeyb1s87nOB',
+            '_route' => 'generated::ouXFSqoodkFkieWT',
           ),
           1 => NULL,
           2 => 
@@ -102,7 +102,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 
           array (
-            '_route' => 'generated::TRBbGuGiZ86zUxlL',
+            '_route' => 'generated::wCVo26wAlDQYyUjT',
           ),
           1 => NULL,
           2 => 
@@ -514,6 +514,26 @@ app('router')->setCompiledRoutes(
           0 => 
           array (
             '_route' => 'checkout',
+          ),
+          1 => NULL,
+          2 => 
+          array (
+            'GET' => 0,
+            'HEAD' => 1,
+          ),
+          3 => NULL,
+          4 => false,
+          5 => false,
+          6 => NULL,
+        ),
+      ),
+      '/cart/checkout/store' => 
+      array (
+        0 => 
+        array (
+          0 => 
+          array (
+            '_route' => 'checkout.store',
           ),
           1 => NULL,
           2 => 
@@ -1471,7 +1491,7 @@ app('router')->setCompiledRoutes(
   ),
   'attributes' => 
   array (
-    'generated::Fg6V2zeyb1s87nOB' => 
+    'generated::ouXFSqoodkFkieWT' => 
     array (
       'methods' => 
       array (
@@ -1492,7 +1512,7 @@ app('router')->setCompiledRoutes(
         array (
           0 => 'web',
         ),
-        'as' => 'generated::Fg6V2zeyb1s87nOB',
+        'as' => 'generated::ouXFSqoodkFkieWT',
       ),
       'fallback' => false,
       'defaults' => 
@@ -1617,7 +1637,7 @@ app('router')->setCompiledRoutes(
       'waitSeconds' => NULL,
       'withTrashed' => false,
     ),
-    'generated::TRBbGuGiZ86zUxlL' => 
+    'generated::wCVo26wAlDQYyUjT' => 
     array (
       'methods' => 
       array (
@@ -1640,7 +1660,7 @@ app('router')->setCompiledRoutes(
         'where' => 
         array (
         ),
-        'as' => 'generated::TRBbGuGiZ86zUxlL',
+        'as' => 'generated::wCVo26wAlDQYyUjT',
       ),
       'fallback' => false,
       'defaults' => 
@@ -2525,6 +2545,43 @@ app('router')->setCompiledRoutes(
         array (
         ),
         'as' => 'checkout',
+      ),
+      'fallback' => false,
+      'defaults' => 
+      array (
+      ),
+      'wheres' => 
+      array (
+      ),
+      'bindingFields' => 
+      array (
+      ),
+      'lockSeconds' => NULL,
+      'waitSeconds' => NULL,
+      'withTrashed' => false,
+    ),
+    'checkout.store' => 
+    array (
+      'methods' => 
+      array (
+        0 => 'GET',
+        1 => 'HEAD',
+      ),
+      'uri' => 'cart/checkout/store',
+      'action' => 
+      array (
+        'middleware' => 
+        array (
+          0 => 'web',
+        ),
+        'uses' => 'App\\Http\\Controllers\\CheckoutController@store',
+        'controller' => 'App\\Http\\Controllers\\CheckoutController@store',
+        'namespace' => NULL,
+        'prefix' => 'cart/checkout',
+        'where' => 
+        array (
+        ),
+        'as' => 'checkout.store',
       ),
       'fallback' => false,
       'defaults' => 

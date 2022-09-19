@@ -70,6 +70,7 @@ Route::group(['prefix' => 'cart'] , function(){
 
     Route::group(['prefix' => 'checkout'], function(){
         Route::get('/', [CheckoutController::class,'checkout'])->name('checkout');
+        Route::get('/store', [CheckoutController::class,'store'])->name('checkout.store');
     });
 
     

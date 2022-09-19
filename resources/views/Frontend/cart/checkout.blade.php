@@ -15,7 +15,8 @@
             </div>
             <div class="row">
               <div class="col-lg-12">
-                <form action="#" class="multisteps-form__form">
+                <form action="{{ route('checkout.store') }}" method="POST" class="multisteps-form__form">
+                    @csrf
                     <!--single form panel-->
                     
                     <!--single form panel-->
@@ -23,6 +24,10 @@
                         <div class="multisteps-form__content">
                             <div class="check-out-form">
                                 <h3 class="checkout-title">Billing Details</h3>
+                                <div class="form-group">
+                                    <label for="user_id">User Id</label>
+                                    <input type="text" class="form-control" id="user_id" name="user_id" value="{{ Auth::id() }}" required placeholder="User Id" disabled/>
+                                </div>
                                 <div class="form-group">
                                     <label for="fullname">Full Name</label>
                                     <input type="text" class="form-control" id="fullname" name="fullname" required placeholder="Full Name" />
@@ -33,7 +38,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Phone</label>
-                                    <input type="text" class="form-control" id="phone" name="phone" required placeholder="Phone" />
+                                    <input type="number" class="form-control" id="phone" name="phone" required placeholder="Phone" />
                                 </div>
                                 <div class="form-group">
                                     <label for="country">Country</label>
@@ -41,7 +46,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="street-address">Street Address</label>
-                                    <input type="text" class="form-control" id="street-address" name="street-address" required placeholder="Street Address" />
+                                    <input type="text" class="form-control" id="street-address" name="street_address" required placeholder="Street Address" />
                                 </div>
                                 <div class="form-group">
                                     <label for="city">City/Town</label>
@@ -49,11 +54,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="state">State/District</label>
-                                    <input type="text" class="form-control" id="state" name="state" required placeholder="State/District" />
+                                    <input type="text" class="form-control" id="state" name="district" required placeholder="State/District" />
                                 </div>
                                 <div class="form-group">
                                     <label for="zipcode">Zipcode / Postal Code</label>
-                                    <input type="text" class="form-control" id="zipcode" name="zipcode" required placeholder="Zipcode / Postal Code" />
+                                    <input type="number" class="form-control" id="zipcode" name="zipcode" required placeholder="Zipcode / Postal Code" />
                                 </div>
                             </div>
                             <div class="button-row d-flex justify-content-end">
@@ -68,36 +73,40 @@
                             <div class="check-out-form">
                                 <h3 class="checkout-title">Shipping Address</h3>
                                 <div class="form-group">
+                                    <label for="user_id">User Id</label>
+                                    <input type="text" class="form-control" id="user_id" name="user_id2" value="{{ Auth::id() }}" required placeholder="User Id" disabled/>
+                                </div>
+                                <div class="form-group">
                                     <label for="fullname3">Full Name</label>
-                                    <input type="text" class="form-control" id="fullname3" name="fullname3" required placeholder="Full Name" />
+                                    <input type="text" class="form-control" id="fullname3" name="fullname2" required placeholder="Full Name" />
                                 </div>
                                 <div class="form-group">
                                     <label for="email3">Email </label>
-                                    <input type="email" class="form-control" id="email3" name="email3" required placeholder="Email " />
+                                    <input type="email" class="form-control" id="email3" name="email2" required placeholder="Email " />
                                 </div>
                                 <div class="form-group">
                                     <label for="phone3">Phone</label>
-                                    <input type="text" class="form-control" id="phone3" name="phone3" required placeholder="Phone" />
+                                    <input type="text" class="form-control" id="phone3" name="phone2" required placeholder="Phone" />
                                 </div>
                                 <div class="form-group">
                                     <label for="country3">Country</label>
-                                    <input type="text" class="form-control" id="country3" name="country3" required placeholder="Country" />
+                                    <input type="text" class="form-control" id="country3" name="country2" required placeholder="Country" />
                                 </div>
                                 <div class="form-group">
                                     <label for="street-address3">Street Address</label>
-                                    <input type="text" class="form-control" id="street-address3" name="street-address3" required placeholder="Street Address" />
+                                    <input type="text" class="form-control" id="street_address3" name="street-address2" required placeholder="Street Address" />
                                 </div>
                                 <div class="form-group">
                                     <label for="city3">City/Town</label>
-                                    <input type="text" class="form-control" id="city3" name="city3" required placeholder="City/Town" />
+                                    <input type="text" class="form-control" id="city3" name="city2" required placeholder="City/Town" />
                                 </div>
                                 <div class="form-group">
                                     <label for="state3">State/District</label>
-                                    <input type="text" class="form-control" id="state3" name="state3" required placeholder="State/District" />
+                                    <input type="text" class="form-control" id="district2" name="state3" required placeholder="State/District" />
                                 </div>
                                 <div class="form-group">
                                     <label for="zipcode3">Zipcode / Postal Code</label>
-                                    <input type="text" class="form-control" id="zipcode3" name="zipcode3" required placeholder="Zipcode / Postal Code" />
+                                    <input type="text" class="form-control" id="zipcode2" name="zipcode3" required placeholder="Zipcode / Postal Code" />
                                 </div>
                             </div>
                             <div class="button-row d-flex justify-content-end">

@@ -69,7 +69,12 @@
                     <li>Shipping Cost <span>100</span></li>
                     <li class="total">Total <span>{{  cartAmount() + totalTax(cartAmount(), 5) + 100 }}</span></li>
                 </ul>
-                <a class="checkout-btn" href="#">Proceed to Checkout</a>
+                @if(Auth::user())
+                    <a class="checkout-btn" href="{{ route('checkout') }}">Proceed to Checkout</a>
+                @else
+                    <a class="checkout-btn" href="{{ route('login.form') }}">Login first to Checkout</a>
+                @endif
+                
             </div>
         </div>
     </div>

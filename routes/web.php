@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -66,6 +67,13 @@ Route::group(['prefix' => 'cart'] , function(){
     Route::get('remove/{id}', [CartController::class,'remove'])->name('cart.remove');
     Route::post('cart-increment', [CartController::class,'increment'])->name('cart.increment');
     Route::post('cart-decrement', [CartController::class,'decrement'])->name('cart.decrement');
+
+    Route::group(['prefix' => 'checkout'], function(){
+        Route::get('/', [CheckoutController::class,'checkout'])->name('checkout');
+        Route::get('/store', [CheckoutController::class,'store'])->name('checkout.store');
+    });
+
+    
 });
 
 Route::group(['prefix' => 'Wishlist'] , function(){

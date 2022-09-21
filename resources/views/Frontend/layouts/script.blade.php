@@ -3,6 +3,7 @@
         <script src="{{asset('assets/Mainpage/js/bootstrap.min.js')}}"></script>
         <script src="{{asset('assets/Mainpage/js/plugins.js')}}"></script>
         <script src="{{asset('assets/Mainpage/js/main.js')}}"></script>
+        <script src="{{asset('assets/Mainpage/js/multi-step-form.js')}}"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
 
@@ -22,6 +23,28 @@
 
 
                                 document.getElementById('wishlist_number').innerHTML = data['item_number'];
+
+                                var toastMixin = Swal.mixin({
+                                        toast: true,
+                                        icon: 'success',
+                                        title: 'General Title',
+                                        animation: false,
+                                        position: 'top-right',
+                                        showConfirmButton: false,
+                                        timer: 3000,
+                                        timerProgressBar: true,
+
+                                        didOpen: (toast) => {
+                                        toast.addEventListener('mouseenter', Swal.stopTimer)
+                                        toast.addEventListener('mouseleave', Swal.resumeTimer)
+                                        }
+                                });
+
+
+                                        toastMixin.fire({
+                                        animation: true,
+                                        title:data['message']
+                                        });
                         }
                 });
         }

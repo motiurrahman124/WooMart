@@ -6,117 +6,22 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="multisteps-form__progress">
+                  <button class="multisteps-form__progress-btn js-active" type="Account" title="Billing">Account</button>
                   <button class="multisteps-form__progress-btn js-active" type="button" title="Billing">Billing</button>
-                  <button class="multisteps-form__progress-btn" type="button" title="Shipping">Shipping</button>
-                  <button class="multisteps-form__progress-btn" type="button" title="Payment">Payment        </button>
+                  <button class="multisteps-form__progress-btn js-active" type="button" title="Shipping">Shipping</button>
+                  <button class="multisteps-form__progress-btn js-active" type="button" title="Payment">Payment        </button>
                   <button class="multisteps-form__progress-btn" type="button" title="Confirm">Confirm        </button>
                 </div>
               </div>
             </div>
             <div class="row">
               <div class="col-lg-12">
-                <form action="{{ route('checkout.store') }}" method="POST" class="multisteps-form__form">
+                <form action="{{ route('shipping.store') }}" method="POST" class="multisteps-form__form">
                     @csrf
                     <!--single form panel-->
-                    
+
                     <!--single form panel-->
                     <div class="multisteps-form__panel js-active" data-animation="scaleIn">
-                        <div class="multisteps-form__content">
-                            <div class="check-out-form">
-                                <h3 class="checkout-title">Billing Details</h3>
-                                <div class="form-group">
-                                    <label for="user_id">User Id</label>
-                                    <input type="text" class="form-control" id="user_id" name="user_id" value="{{ Auth::id() }}" required placeholder="User Id" disabled/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="fullname">Full Name</label>
-                                    <input type="text" class="form-control" id="fullname" name="fullname" required placeholder="Full Name" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">Email </label>
-                                    <input type="email" class="form-control" id="email" name="email" required placeholder="Email " />
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone">Phone</label>
-                                    <input type="number" class="form-control" id="phone" name="phone" required placeholder="Phone" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="country">Country</label>
-                                    <input type="text" class="form-control" id="country" name="country" required placeholder="Country" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="street-address">Street Address</label>
-                                    <input type="text" class="form-control" id="street-address" name="street_address" required placeholder="Street Address" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="city">City/Town</label>
-                                    <input type="text" class="form-control" id="city" name="city" required placeholder="City/Town" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="state">State/District</label>
-                                    <input type="text" class="form-control" id="state" name="district" required placeholder="State/District" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="zipcode">Zipcode / Postal Code</label>
-                                    <input type="number" class="form-control" id="zipcode" name="zipcode" required placeholder="Zipcode / Postal Code" />
-                                </div>
-                            </div>
-                            <div class="button-row d-flex justify-content-end">
-                                <button class="btn back js-btn-prev" type="button" title="Prev"><i class="fas fa-angle-left"></i> Back </button>
-                                <button class="btn next  js-btn-next" type="button" title="Next">Next <i class="fas fa-angle-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--single form panel-->
-                    <div class="multisteps-form__panel " data-animation="scaleIn">
-                        <div class="multisteps-form__content">
-                            <div class="check-out-form">
-                                <h3 class="checkout-title">Shipping Address</h3>
-                                <div class="form-group">
-                                    <label for="user_id">User Id</label>
-                                    <input type="text" class="form-control" id="user_id" name="user_id2" value="{{ Auth::id() }}" required placeholder="User Id" disabled/>
-                                </div>
-                                <div class="form-group">
-                                    <label for="fullname3">Full Name</label>
-                                    <input type="text" class="form-control" id="fullname3" name="fullname2" required placeholder="Full Name" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="email3">Email </label>
-                                    <input type="email" class="form-control" id="email3" name="email2" required placeholder="Email " />
-                                </div>
-                                <div class="form-group">
-                                    <label for="phone3">Phone</label>
-                                    <input type="text" class="form-control" id="phone3" name="phone2" required placeholder="Phone" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="country3">Country</label>
-                                    <input type="text" class="form-control" id="country3" name="country2" required placeholder="Country" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="street-address3">Street Address</label>
-                                    <input type="text" class="form-control" id="street_address3" name="street-address2" required placeholder="Street Address" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="city3">City/Town</label>
-                                    <input type="text" class="form-control" id="city3" name="city2" required placeholder="City/Town" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="state3">State/District</label>
-                                    <input type="text" class="form-control" id="district2" name="state3" required placeholder="State/District" />
-                                </div>
-                                <div class="form-group">
-                                    <label for="zipcode3">Zipcode / Postal Code</label>
-                                    <input type="text" class="form-control" id="zipcode2" name="zipcode3" required placeholder="Zipcode / Postal Code" />
-                                </div>
-                            </div>
-                            <div class="button-row d-flex justify-content-end">
-                                <button class="btn back js-btn-prev" type="button" title="Prev"><i class="fas fa-angle-left"></i> Back </button>
-                                <button class="btn next js-btn-next" type="button" title="Next">Next <i class="fas fa-angle-right"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <!--single form panel-->
-                    <div class="multisteps-form__panel " data-animation="scaleIn">
                         <div class="multisteps-form__content">
                             <div class="row">
                                 <div class="col-lg-5">
@@ -139,7 +44,7 @@
                                         <div class="form-group">
                                             <label for="cardhumber">Card Number</label>
                                             <input type="text" class="form-control" id="cardhumber" name="cardhumber" required placeholder="4152  5632  2563  5896" />
-                                            <img class="form-img" src="images/p-mastercard.png" alt="p-mastercard" /> 
+                                            <img class="form-img" src="images/p-mastercard.png" alt="p-mastercard" />
                                         </div>
                                         <div class="form-group">
                                             <label for="authorname">Name</label>
@@ -220,17 +125,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!--single form panel-->
-                    <div class="multisteps-form__panel " data-animation="scaleIn">
-                        <div class="check-out-form text-center">
-                            <h3 class="checkout-title">Confirmation</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus at vestibulum, sed nunc, porttitor justo blandit quis diam. Metus odio sit diam, vel cras mauris malesuada lobortis ullamcorper.</p>
-                        </div>
-                        <div class="button-row d-flex justify-content-center">
-                            <button class="btn back js-btn-prev" type="button" title="Prev"><i class="fas fa-angle-left"></i> Back to Edit</button>
-                            <button class="btn " type="submit" title="Confirm">Confirm</button>
                         </div>
                     </div>
                 </form>

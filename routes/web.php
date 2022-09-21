@@ -69,11 +69,16 @@ Route::group(['prefix' => 'cart'] , function(){
     Route::post('cart-decrement', [CartController::class,'decrement'])->name('cart.decrement');
 
     Route::group(['prefix' => 'checkout'], function(){
-        Route::get('/', [CheckoutController::class,'checkout'])->name('checkout');
-        Route::get('/store', [CheckoutController::class,'store'])->name('checkout.store');
+        Route::get('/billing', [CheckoutController::class,'checkout'])->name('checkout');
+        Route::post('/billing/store', [CheckoutController::class,'billingStore'])->name('billing.store');
+
+        Route::get('/shipping', [CheckoutController::class,'shipping'])->name('checkout.shipping');
+        Route::post('/shippin/store', [CheckoutController::class,'shipping'])->name('shipping.store');
+
+        Route::get('/payment', [CheckoutController::class,'paymnet'])->name('paymnet');
     });
 
-    
+
 });
 
 Route::group(['prefix' => 'Wishlist'] , function(){

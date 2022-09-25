@@ -112,6 +112,16 @@
           </li>
 
 
+          <li class="nav-item">
+            <a href="{{ route('order.index') }}" class="nav-link {{ isset($menu) && $menu == 'order' ? 'active' : ''}}">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Order List
+              </p>
+            </a>
+          </li>
+
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

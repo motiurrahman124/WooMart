@@ -76,6 +76,7 @@ Route::group(['prefix' => 'cart'] , function(){
         Route::post('/shippin/store', [CheckoutController::class,'shipping'])->name('shipping.store');
 
         Route::get('/payment', [CheckoutController::class,'paymnet'])->name('paymnet');
+        Route::post('/stripe-payment', [CheckoutController::class,'stripePaymnet'])->name('stripe.payment');
     });
 
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Dashboard\AuthController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use Illuminate\Support\Facades\Route;
@@ -107,6 +108,17 @@ Route::group(['prefix' => 'admin'], function() {
         // Route::post('/store',[ProductController::class,'store'])->name('product.store');
 
         Route::get('/read/{id}',[ContactController::class,'read'])->name('contact.read');
+        
+
+    });
+
+    
+    Route::group(['prefix' => 'order'], function () {
+
+        Route::get('/list',[OrderController::class,'index'])->name('order.index');
+        Route::get('/invoice/{id}',[OrderController::class,'invoice'])->name('show.invoice');
+        
+
         
 
     });

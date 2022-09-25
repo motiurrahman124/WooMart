@@ -6,6 +6,7 @@ use App\Models\Bill;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\OrderDetails;
+use App\Models\Payment;
 use App\Models\Product;
 use App\Models\Shipping;
 use Illuminate\Http\Request;
@@ -76,6 +77,8 @@ class CheckoutController extends Controller
                 'user_id'       => Auth::id(),
                 'billing_id'    => session()->get('billing_id'),
                 'shipping_id'   => $shipping->id,
+                'delivery_fee'  => 100,
+
             ]);
             $cart = Cart::where(['user_id' => Auth::id()])->get();
 
@@ -109,7 +112,7 @@ class CheckoutController extends Controller
                 'total_amount'  => $total_amount,
                 'vat'           => 5,
                 'total_vat'     => totalTax($total_amount, 5),
-                'grand_total'   => $total_amount +totalTax($total_amount, 5)
+                'grand_total'   => $total_amount +totalTax($total_amount, 5)+100
             ]);
 
             DB::commit();
@@ -130,5 +133,23 @@ class CheckoutController extends Controller
         //     return
         // }
         return view('Frontend.cart.payment', ['amount' => $order->grand_total]);
+    }
+
+    public function stripePaymnet(Request $request)
+    {
+        $order = Order::where('id', session('order_id'))->first();
+
+        $payment = Payment::create([
+            'user_id' => Auth::id(),
+            'order_id' => $order->id,
+        ]);
+
+        $orderData['payment_status'] = 'Success';
+        $orderData['is_confirmed'] = true;
+        $orderData['status'] = 'processing';
+
+        $order->update($orderData);
+
+        return redirect()->route('profile');
     }
 }

@@ -14,5 +14,13 @@ class Order extends Model
     {
         return $this->hasMany(OrderDetails::class);
     }
+    public function billing()
+    {
+        return $this->belongsTo(Bill::class,'billing_id');
+    }
+    public function shipping()
+    {
+        return $this->belongsTo(Shipping::class);
+    }
 
 }
